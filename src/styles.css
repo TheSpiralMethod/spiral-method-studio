@@ -113,6 +113,10 @@
     letter-spacing: -0.015em;
   }
 
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-ember);
     outline-offset: 3px;
