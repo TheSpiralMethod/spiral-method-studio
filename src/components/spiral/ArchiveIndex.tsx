@@ -38,11 +38,8 @@ export function ArchiveIndex() {
                       decoding="async"
                       className="mt-5 w-full max-w-sm object-cover"
                     />
-                  ) : (
-                    <p className="label-editorial mt-5 border border-dashed border-metadata/40 px-3 py-6 text-center">
-                      {PLACEHOLDER.artwork}
-                    </p>
-                  )}
+                  ) : null}
+
                 </div>
 
                 <p className="label-editorial sm:text-right">{item.label}</p>
