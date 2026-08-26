@@ -11,7 +11,7 @@ export function AboutSection() {
         <Reveal delay={100}>
           <div className="mt-8 space-y-6">
             {ABOUT_TEXT.map((line) => (
-              <p key={line} className="text-balance text-xl leading-[1.5] sm:text-2xl">
+              <p key={line} className="font-display text-balance text-xl leading-[1.5] sm:text-2xl">
                 {line}
               </p>
             ))}

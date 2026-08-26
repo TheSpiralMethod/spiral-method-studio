@@ -36,7 +36,7 @@ export function ManifestoSection() {
           ) : null}
 
           <Reveal>
-            <p className="text-balance text-3xl leading-[1.25] sm:text-5xl md:text-6xl md:leading-[1.2]">
+            <p className="font-display text-balance text-3xl leading-[1.25] sm:text-5xl md:text-6xl md:leading-[1.2]">
               {plate.lines.map((line, i) => (
                 <span key={line + i} className="block">
                   <StatementLine line={line} emphasis={plate.emphasis} />
