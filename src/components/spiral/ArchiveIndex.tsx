@@ -1,4 +1,4 @@
-import { ARCHIVE_ITEMS, PLACEHOLDER } from "@/data/content";
+import { ARCHIVE_ITEMS } from "@/data/content";
 import { Reveal } from "./Reveal";
 
 /**
