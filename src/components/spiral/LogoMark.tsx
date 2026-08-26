@@ -24,11 +24,13 @@ export function LogoMark({
         src={logo.src}
         alt={logo.alt}
         className={cn("h-auto w-full object-contain", className)}
-        loading="lazy"
+        loading={asset === "full" ? "eager" : "lazy"}
         decoding="async"
+        {...(logo.alt ? {} : { "aria-hidden": true })}
       />
     );
   }
+
 
   const reduced = asset === "glyph" || asset === "glyphInk";
 
