@@ -7,8 +7,9 @@ export function SiteFooter() {
       <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div>
-            {/* Full spiral mark, ink version — replace via src/data/logos.ts */}
-            <LogoMark asset="fullInk" className="max-w-[15rem]" />
+            {/* Full spiral mark, ink version */}
+            <LogoMark asset="fullInk" className="w-24 sm:w-28" />
+
             <p className="mt-6 text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
           </div>
 
