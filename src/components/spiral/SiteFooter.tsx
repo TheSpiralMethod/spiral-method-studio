@@ -4,21 +4,20 @@ import { LogoMark } from "./LogoMark";
 export function SiteFooter() {
   return (
     <footer className="grain border-t border-metadata/25">
-      <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-24">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
-          <div>
-            {/* Full spiral mark, ink version — shown on its light paper plate,
-                the neutral/light-background context the ink asset is made for. */}
-            <div className="inline-flex bg-foreground p-4">
-              <LogoMark asset="fullInk" className="w-20 sm:w-24" />
+      <div className="mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-20">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          {/* Compact footer signature: bone-paper logo plate, tagline, and status lines
+              grouped as one block so it reads as a signature, not a separate visual section. */}
+          <div className="flex flex-col gap-4">
+            {/* Ink full mark on its bone-paper plate — reduced to a signature scale. */}
+            <div className="inline-flex w-fit bg-foreground p-3 sm:p-3.5">
+              <LogoMark asset="fullInk" className="w-14 sm:w-16" />
             </div>
 
-
-            <p className="mt-6 text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
+            <p className="text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
           </div>
 
-          {/* TO REPLACE: put the real URL / address in src/data/content.ts,
-              then turn the <span> into an <a href="…">. */}
+          {/* Status lines, kept as plain text — no links or integrations. */}
           <ul className="space-y-3">
             {FOOTER_LINKS.map((link) => (
               <li key={link.label} className="flex items-baseline gap-4">
@@ -29,7 +28,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div className="mt-16 h-px w-full bg-metadata/35" />
+        <div className="mt-12 h-px w-full bg-metadata/35" />
         <p className="label-editorial mt-4">{COPYRIGHT}</p>
       </div>
     </footer>
