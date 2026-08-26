@@ -2,15 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/spiral/SiteNav";
 import { Hero } from "@/components/spiral/Hero";
-import { MethodSection } from "@/components/spiral/MethodSection";
-import { ArchiveGrid } from "@/components/spiral/ArchiveGrid";
+import { ManifestoSection } from "@/components/spiral/ManifestoSection";
+import { ArchiveIndex } from "@/components/spiral/ArchiveIndex";
 import { EditionsSection } from "@/components/spiral/EditionsSection";
-import { StatementSection } from "@/components/spiral/StatementSection";
-import { SubscribeForm } from "@/components/spiral/SubscribeForm";
+import { AboutSection } from "@/components/spiral/AboutSection";
 import { SiteFooter } from "@/components/spiral/SiteFooter";
 
-const TITLE = "The Spiral Method — A Visual and Editorial Archive";
-const DESCRIPTION = "An editorial space for image, form, and memory.";
+const TITLE = "The Spiral Method — A Record of Recurring Patterns";
+const DESCRIPTION =
+  "An independent visual and editorial record of recurring patterns. It documents what returns, what remains, and what shifts by too little to explain.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,11 +34,10 @@ function Index() {
       <SiteNav />
       <main>
         <Hero />
-        <MethodSection />
-        <ArchiveGrid />
+        <ManifestoSection />
+        <ArchiveIndex />
         <EditionsSection />
-        <StatementSection />
-        <SubscribeForm />
+        <AboutSection />
       </main>
       <SiteFooter />
     </div>

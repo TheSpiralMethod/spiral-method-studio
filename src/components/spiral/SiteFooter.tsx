@@ -1,32 +1,31 @@
-import { SOCIAL_LINKS } from "@/data/content";
+import { COPYRIGHT, FOOTER_LINE, FOOTER_LINKS } from "@/data/content";
+import { LogoMark } from "./LogoMark";
 
 export function SiteFooter() {
   return (
-    <footer className="grain border-t border-hairline">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <footer className="grain border-t border-metadata/25">
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="font-mono text-[0.7rem] tracking-[0.28em] uppercase">The Spiral Method</p>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A way of holding what turns.
-            </p>
+            {/* Full spiral mark, ink version — replace via src/data/logos.ts */}
+            <LogoMark asset="fullInk" className="max-w-[15rem]" />
+            <p className="mt-6 text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
           </div>
 
-          {/* TO REPLACE: swap each placeholder for a real URL or address,
+          {/* TO REPLACE: put the real URL / address in src/data/content.ts,
               then turn the <span> into an <a href="…">. */}
           <ul className="space-y-3">
-            {SOCIAL_LINKS.map((link) => (
+            {FOOTER_LINKS.map((link) => (
               <li key={link.label} className="flex items-baseline gap-4">
                 <span className="label-editorial w-24 shrink-0">{link.label}</span>
-                <span className="text-sm text-muted-foreground">{link.value}</span>
+                <span className="text-sm text-metadata">{link.value}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="mt-16 border-t border-hairline pt-6 text-xs text-muted-foreground">
-          © 2026 The Spiral Method.
-        </p>
+        <div className="mt-16 h-px w-full bg-metadata/35" />
+        <p className="label-editorial mt-4">{COPYRIGHT}</p>
       </div>
     </footer>
   );

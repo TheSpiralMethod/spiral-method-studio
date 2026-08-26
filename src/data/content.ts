@@ -1,125 +1,149 @@
 /**
- * THE SPIRAL METHOD — single source of replaceable copy.
+ * THE SPIRAL METHOD — single editable content file.
  *
- * Every string the site owner will eventually replace lives here.
- * Placeholders are written in [BRACKETS] so they are easy to find:
- *   [REPLACE WITH ORIGINAL ARTWORK]
- *   [ADD FINAL TITLE]
- *   [ADD OPTIONAL CURATORIAL TEXT]
- *   [REPLACE WITH ORIGINAL PRODUCT MOCKUP]
- *   [ADD EDITION NAME]
- *   [ADD SHORT DESCRIPTION]
- *   [INSTAGRAM URL] / [X / TWITTER URL] / [CONTACT EMAIL]
+ * Every public-facing string lives here. Placeholders are in [BRACKETS]
+ * so they are easy to search for and replace:
+ *   [REPLACE WITH PUBLIC ARTWORK] / [ADD PUBLIC TITLE] / [ADD PUBLIC EDITORIAL NOTE]
+ *   [REPLACE WITH ORIGINAL MOCKUP] / [ADD EDITION NAME] / [ADD SHORT PUBLIC DESCRIPTION]
+ *   [INSTAGRAM URL] / [CONTACT EMAIL]
  *
- * Keep private source material OUTSIDE this repository. Only export
- * web-ready files into `public/` or `src/assets/`.
+ * Logo asset placeholders live in `src/data/logos.ts`.
+ * Only ever place web-ready, public files in this repository.
  */
 
 export const PLACEHOLDER = {
-  artwork: "[REPLACE WITH ORIGINAL ARTWORK]",
-  heroArtwork: "[REPLACE WITH ORIGINAL HERO ARTWORK]",
-  productMockup: "[REPLACE WITH ORIGINAL PRODUCT MOCKUP]",
-  finalTitle: "[ADD FINAL TITLE]",
-  curatorialText: "[ADD OPTIONAL CURATORIAL TEXT]",
+  artwork: "[REPLACE WITH PUBLIC ARTWORK]",
+  publicTitle: "[ADD PUBLIC TITLE]",
+  editorialNote: "[ADD PUBLIC EDITORIAL NOTE]",
+  mockup: "[REPLACE WITH ORIGINAL MOCKUP]",
   editionName: "[ADD EDITION NAME]",
-  shortDescription: "[ADD SHORT DESCRIPTION]",
+  editionDescription: "[ADD SHORT PUBLIC DESCRIPTION]",
   instagram: "[INSTAGRAM URL]",
-  twitter: "[X / TWITTER URL]",
   email: "[CONTACT EMAIL]",
 } as const;
 
+export const WORDMARK = "The Spiral Method";
+export const SUBLINE = "A record of recurring patterns";
+
 export const NAV_LINKS = [
-  { label: "Method", href: "#method" },
+  { label: "Manifesto", href: "#manifesto" },
   { label: "Archive", href: "#archive" },
   { label: "Editions", href: "#editions" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about" },
 ] as const;
 
-export const METHOD_BLOCKS = [
+/**
+ * MANIFESTO SEQUENCE — 9 editorial plates.
+ * Copy is fixed. Do not add explanation, resolution, or calls to action.
+ * `lines` render as separate lines of one centered statement.
+ * `emphasis` marks a single word rendered in the ember accent.
+ */
+export type ManifestoPlate = {
+  index: string;
+  lines: string[];
+  subline?: string;
+  label: string;
+  emphasis?: string;
+  glyph?: "top" | "above-wordmark";
+  isTitlePlate?: boolean;
+};
+
+export const MANIFESTO_PLATES: ManifestoPlate[] = [
   {
-    number: "01",
-    title: "Fragment",
-    body: "A signal, question, or impression that has not yet settled.",
+    index: "01",
+    lines: ["The Spiral Method"],
+    subline: "A record of recurring patterns",
+    label: "Manifesto",
+    glyph: "above-wordmark",
+    isTitlePlate: true,
+  },
+  { index: "02", lines: ["It comes back."], label: "Observation" },
+  {
+    index: "03",
+    lines: ["It comes back the same.", "Not softened.", "No lesson."],
+    label: "Observation",
   },
   {
-    number: "02",
-    title: "Form",
-    body: "An image, word, or symbol that makes it possible to look again.",
+    index: "04",
+    lines: ["You recognize it in the body", "before the head."],
+    label: "Observation",
   },
+  { index: "05", lines: ["For years it was", "the only constant."], label: "Constant" },
   {
-    number: "03",
-    title: "Trace",
-    body: "A piece that continues to exist beyond the screen.",
+    index: "06",
+    lines: ["A constant does not change.", "That is what the word means."],
+    label: "Constant",
+    emphasis: "constant",
   },
-] as const;
+  { index: "07", lines: ["And still —", "a decimal fraction", "moved."], label: "Deviation" },
+  { index: "08", lines: ["Too small to see.", "Too small to help."], label: "Deviation" },
+  {
+    index: "09",
+    lines: ["Nothing healed.", "I call this a method."],
+    label: "No conclusions",
+    glyph: "top",
+  },
+];
 
 export type ArchiveItem = {
   id: string;
+  /** Archive index number, e.g. "A / 001". */
   number: string;
-  workingTitle: string;
-  /** Replace with the final public title of the work. */
-  finalTitle: string;
-  /** Optional curatorial note shown in the detail view. */
-  curatorialText: string;
-  /** Web-ready image path, e.g. "/archive/001.jpg". Empty = placeholder. */
+  title: string;
+  note: string;
+  label: "Observation" | "Constant" | "Deviation" | "Trace" | "Unresolved";
+  /** Web-ready public image path, e.g. "/archive/001.jpg". Empty = placeholder. */
   image: string;
-  variant: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
 export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "001",
-    number: "Archive 001",
-    workingTitle: "Threshold",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 001",
+    title: "Threshold", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Observation",
     image: "",
-    variant: 1,
   },
   {
     id: "002",
-    number: "Archive 002",
-    workingTitle: "Displacement",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 002",
+    title: "Displacement", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Constant",
     image: "",
-    variant: 2,
   },
   {
     id: "003",
-    number: "Archive 003",
-    workingTitle: "Minimal Ember",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 003",
+    title: "Interval", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Deviation",
     image: "",
-    variant: 3,
   },
   {
     id: "004",
-    number: "Archive 004",
-    workingTitle: "Persistence",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 004",
+    title: "Residue", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Trace",
     image: "",
-    variant: 4,
   },
   {
     id: "005",
-    number: "Archive 005",
-    workingTitle: "Contour Lines",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 005",
+    title: "Repetition", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Unresolved",
     image: "",
-    variant: 5,
   },
   {
     id: "006",
-    number: "Archive 006",
-    workingTitle: "Background Signal",
-    finalTitle: PLACEHOLDER.finalTitle,
-    curatorialText: PLACEHOLDER.curatorialText,
+    number: "A / 006",
+    title: "Background", // working title — [ADD PUBLIC TITLE]
+    note: PLACEHOLDER.editorialNote,
+    label: "Observation",
     image: "",
-    variant: 6,
   },
 ];
 
@@ -127,47 +151,51 @@ export type EditionItem = {
   id: string;
   number: string;
   category: string;
-  /** Replace with the final edition name. */
   name: string;
-  /** Replace with a short, non-promotional description. */
   description: string;
-  /** Web-ready mockup path. Empty = placeholder. */
+  /** Web-ready public mockup path. Empty = placeholder. */
   image: string;
-  variant: 1 | 2 | 3;
 };
 
 export const EDITION_ITEMS: EditionItem[] = [
   {
     id: "01",
-    number: "Edition 01",
+    number: "E / 01",
     category: "Garment",
     name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.shortDescription,
+    description: PLACEHOLDER.editionDescription,
     image: "",
-    variant: 1,
   },
   {
     id: "02",
-    number: "Edition 02",
+    number: "E / 02",
     category: "Print",
     name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.shortDescription,
+    description: PLACEHOLDER.editionDescription,
     image: "",
-    variant: 2,
   },
   {
     id: "03",
-    number: "Edition 03",
-    category: "Digital object",
+    number: "E / 03",
+    category: "Digital edition",
     name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.shortDescription,
+    description: PLACEHOLDER.editionDescription,
     image: "",
-    variant: 3,
   },
 ];
 
-export const SOCIAL_LINKS = [
+export const EDITION_STATUS = "Coming later";
+
+export const ABOUT_TEXT = [
+  "The Spiral Method is an independent visual and editorial record of recurring patterns.",
+  "It does not offer conclusions.",
+  "It documents what returns, what remains, and what shifts by too little to explain.",
+] as const;
+
+export const FOOTER_LINKS = [
   { label: "Instagram", value: PLACEHOLDER.instagram },
-  { label: "X / Twitter", value: PLACEHOLDER.twitter },
   { label: "Contact", value: PLACEHOLDER.email },
 ] as const;
+
+export const FOOTER_LINE = "A record of recurring patterns.";
+export const COPYRIGHT = "© 2026 The Spiral Method";
