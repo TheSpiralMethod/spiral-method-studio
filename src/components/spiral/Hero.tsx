@@ -26,10 +26,8 @@ export function Hero() {
           <p className="label-editorial mt-6 sm:mt-8">A record of recurring patterns</p>
         </Reveal>
 
-        <Reveal delay={260} className="mt-12 flex justify-center">
-          {/* Full spiral mark with wordmark — replace via src/data/logos.ts */}
-          <LogoMark asset="full" className="max-w-[18rem]" />
-        </Reveal>
+        {/* The full spiral mark (glyph + wordmark) can replace the glyph above
+            once available — see src/data/logos.ts, LOGOS.full. */}
       </div>
 
       <div className="mt-10 w-full">
