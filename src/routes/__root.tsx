@@ -77,12 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "The Spiral Method — A Visual and Editorial Archive" },
-      { name: "description", content: "An editorial space for image, form, and memory." },
+      { title: "The Spiral Method — A Record of Recurring Patterns" },
+      {
+        name: "description",
+        content: "An independent visual and editorial record of recurring patterns.",
+      },
       { property: "og:site_name", content: "The Spiral Method" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#141312" },
+      { name: "theme-color", content: "#0B0D12" },
     ],
     links: [
       {
