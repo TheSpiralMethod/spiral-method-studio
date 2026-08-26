@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { NAV_LINKS } from "@/data/content";
 import { cn } from "@/lib/utils";
-import { LogoMark } from "./LogoMark";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
