@@ -42,13 +42,10 @@ export function SiteNav() {
           className="flex items-center gap-3 text-[0.7rem] tracking-[0.3em] uppercase"
           aria-label="The Spiral Method — back to top"
         >
-          {/* Reduced spiral glyph, ink version — small navigation marker */}
-          <LogoMark
-            asset="glyphInk"
-            showPlaceholderText={false}
-            className="h-8 w-8 border-none px-0 py-0"
-          />
-          <span className="hidden sm:inline">The Spiral Method</span>
+          {/* The ink glyph is reserved for light/neutral contexts; on the dark
+              bar the wordmark stands alone. */}
+          <span className="sm:inline">The Spiral Method</span>
+
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
