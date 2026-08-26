@@ -84,95 +84,23 @@ export type ArchiveItem = {
   image: string;
 };
 
+/** Temporary single entry until real recorded material is public. */
 export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "001",
     number: "A / 001",
-    title: "Threshold", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
-    label: "Observation",
-    image: "",
-  },
-  {
-    id: "002",
-    number: "A / 002",
-    title: "Displacement", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
-    label: "Constant",
-    image: "",
-  },
-  {
-    id: "003",
-    number: "A / 003",
-    title: "Interval", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
-    label: "Deviation",
-    image: "",
-  },
-  {
-    id: "004",
-    number: "A / 004",
-    title: "Residue", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
-    label: "Trace",
-    image: "",
-  },
-  {
-    id: "005",
-    number: "A / 005",
-    title: "Repetition", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
+    title: "Archive opening later.",
+    note: "Recorded material will appear here when it is ready to be public.",
     label: "Unresolved",
     image: "",
   },
-  {
-    id: "006",
-    number: "A / 006",
-    title: "Background", // working title — [ADD PUBLIC TITLE]
-    note: PLACEHOLDER.editorialNote,
-    label: "Observation",
-    image: "",
-  },
 ];
 
-export type EditionItem = {
-  id: string;
-  number: string;
-  category: string;
-  name: string;
-  description: string;
-  /** Web-ready public mockup path. Empty = placeholder. */
-  image: string;
-};
-
-export const EDITION_ITEMS: EditionItem[] = [
-  {
-    id: "01",
-    number: "E / 01",
-    category: "Garment",
-    name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.editionDescription,
-    image: "",
-  },
-  {
-    id: "02",
-    number: "E / 02",
-    category: "Print",
-    name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.editionDescription,
-    image: "",
-  },
-  {
-    id: "03",
-    number: "E / 03",
-    category: "Digital edition",
-    name: PLACEHOLDER.editionName,
-    description: PLACEHOLDER.editionDescription,
-    image: "",
-  },
-];
-
-export const EDITION_STATUS = "Coming later";
+/** Editions are presentation-only; nothing is available yet. */
+export const EDITIONS_NOTE = [
+  "Limited physical and digital editions will appear here later.",
+  "Nothing is available yet.",
+] as const;
 
 export const ABOUT_TEXT = [
   "The Spiral Method is an independent visual and editorial record of recurring patterns.",
@@ -181,9 +109,10 @@ export const ABOUT_TEXT = [
 ] as const;
 
 export const FOOTER_LINKS = [
-  { label: "Instagram", value: PLACEHOLDER.instagram },
-  { label: "Contact", value: PLACEHOLDER.email },
+  { label: "Instagram", value: "Instagram — coming soon" },
+  { label: "Contact", value: "Contact — not yet open" },
 ] as const;
+
 
 export const FOOTER_LINE = "A record of recurring patterns.";
 export const COPYRIGHT = "© 2026 The Spiral Method";
