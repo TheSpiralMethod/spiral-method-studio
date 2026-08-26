@@ -1,26 +1,14 @@
 /**
  * THE SPIRAL METHOD — single editable content file.
  *
- * Every public-facing string lives here. Placeholders are in [BRACKETS]
- * so they are easy to search for and replace:
- *   [REPLACE WITH PUBLIC ARTWORK] / [ADD PUBLIC TITLE] / [ADD PUBLIC EDITORIAL NOTE]
- *   [REPLACE WITH ORIGINAL MOCKUP] / [ADD EDITION NAME] / [ADD SHORT PUBLIC DESCRIPTION]
- *   [INSTAGRAM URL] / [CONTACT EMAIL]
+ * No bracketed placeholder text is rendered on the public site.
+ * When real material is ready, replace the temporary Archive / Editions
+ * notes below with real entries.
  *
- * Logo asset placeholders live in `src/data/logos.ts`.
+ * Logo assets live in `src/data/logos.ts`.
  * Only ever place web-ready, public files in this repository.
  */
 
-export const PLACEHOLDER = {
-  artwork: "[REPLACE WITH PUBLIC ARTWORK]",
-  publicTitle: "[ADD PUBLIC TITLE]",
-  editorialNote: "[ADD PUBLIC EDITORIAL NOTE]",
-  mockup: "[REPLACE WITH ORIGINAL MOCKUP]",
-  editionName: "[ADD EDITION NAME]",
-  editionDescription: "[ADD SHORT PUBLIC DESCRIPTION]",
-  instagram: "[INSTAGRAM URL]",
-  email: "[CONTACT EMAIL]",
-} as const;
 
 export const WORDMARK = "The Spiral Method";
 export const SUBLINE = "A record of recurring patterns";
