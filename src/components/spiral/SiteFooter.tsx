@@ -7,8 +7,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10 sm:py-24">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div>
-            {/* Full spiral mark, ink version — replace via src/data/logos.ts */}
-            <LogoMark asset="fullInk" className="max-w-[15rem]" />
+            {/* Full spiral mark, ink version — shown on its light paper plate,
+                the neutral/light-background context the ink asset is made for. */}
+            <div className="inline-flex bg-foreground p-4">
+              <LogoMark asset="fullInk" className="w-20 sm:w-24" />
+            </div>
+
+
             <p className="mt-6 text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
           </div>
 

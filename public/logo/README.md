@@ -1,14 +1,13 @@
 # Logo assets
 
-Drop your web-ready logo files here, then set the matching `src` in
-`src/data/logos.ts`.
+Final original marks for The Spiral Method. Do not redraw, recolor, crop,
+rasterize or regenerate these files.
 
-| File to add               | Referenced as | Used in    |
-| ------------------------- | ------------- | ---------- |
-| spiral-full.svg           | LOGOS.full    | Hero       |
-| spiral-full-ink.svg       | LOGOS.fullInk | Footer     |
-| spiral-glyph.svg          | LOGOS.glyph   | Plates     |
-| spiral-glyph-ink.svg      | LOGOS.glyphInk| Navigation |
+| File                     | Referenced as  | Used in                     |
+| ------------------------ | -------------- | --------------------------- |
+| tsm-full-mark-ember.svg  | LOGOS.full     | Hero title plate            |
+| tsm-full-mark-ink.svg    | LOGOS.fullInk  | Footer / neutral contexts   |
+| tsm-glyph-ember.svg      | LOGOS.glyph    | Manifesto plates 01 and 09  |
+| tsm-glyph-ink.svg        | LOGOS.glyphInk | Small navigation marker     |
 
-SVG preferred; transparent PNG (at least 1000px wide) also works.
-Only place public, web-ready exports here — keep originals outside the project.
+References live in `src/data/logos.ts`.

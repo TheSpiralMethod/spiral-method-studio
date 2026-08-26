@@ -15,9 +15,10 @@ export function Hero() {
     >
       <div className="flex flex-1 flex-col items-center justify-center">
         <Reveal className="flex justify-center">
-          {/* Reduced spiral glyph — upper third */}
-          <LogoMark asset="glyph" tone="ember" className="max-w-[13rem]" />
+          {/* Full spiral mark, ember — primary hero mark */}
+          <LogoMark asset="full" tone="ember" className="w-40 max-w-[60vw] sm:w-56" />
         </Reveal>
+
 
         <Reveal delay={140} className="mt-10 w-full text-center sm:mt-14">
           <h1 className="text-balance text-[2.1rem] leading-[1.05] tracking-[0.06em] uppercase sm:text-5xl md:text-6xl">
@@ -26,8 +27,8 @@ export function Hero() {
           <p className="label-editorial mt-6 sm:mt-8">A record of recurring patterns</p>
         </Reveal>
 
-        {/* The full spiral mark (glyph + wordmark) can replace the glyph above
-            once available — see src/data/logos.ts, LOGOS.full. */}
+
+
       </div>
 
       <div className="mt-10 w-full">

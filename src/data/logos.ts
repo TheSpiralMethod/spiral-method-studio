@@ -21,25 +21,25 @@ export const LOGOS = {
   /** Full spiral mark with wordmark — hero. */
   full: {
     placeholder: "[REPLACE WITH FULL SPIRAL MARK]",
-    src: "", // "/logo/spiral-full.svg"
+    src: "/logo/tsm-full-mark-ember.svg",
     alt: "The Spiral Method",
   },
   /** Ink version of the full mark — footer. */
   fullInk: {
     placeholder: "[REPLACE WITH FULL SPIRAL MARK — INK]",
-    src: "", // "/logo/spiral-full-ink.svg"
+    src: "/logo/tsm-full-mark-ink.svg",
     alt: "The Spiral Method",
   },
   /** Reduced spiral glyph — plates, small section markers. */
   glyph: {
     placeholder: "[REPLACE WITH REDUCED SPIRAL GLYPH]",
-    src: "", // "/logo/spiral-glyph.svg"
+    src: "/logo/tsm-glyph-ember.svg",
     alt: "",
   },
   /** Ink version of the reduced glyph — navigation. */
   glyphInk: {
     placeholder: "[REPLACE WITH REDUCED SPIRAL GLYPH — INK]",
-    src: "", // "/logo/spiral-glyph-ink.svg"
+    src: "/logo/tsm-glyph-ink.svg",
     alt: "",
   },
 } satisfies Record<string, LogoAsset>;
