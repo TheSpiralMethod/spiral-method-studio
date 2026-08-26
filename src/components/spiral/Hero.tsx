@@ -1,82 +1,43 @@
-import { PLACEHOLDER } from "@/data/content";
+import { LogoMark } from "./LogoMark";
 import { Reveal } from "./Reveal";
 
+/**
+ * Hero = printed archival title plate.
+ * Reduced glyph in the upper third, wordmark centered, subline,
+ * bottom rule and archival metadata.
+ */
 export function Hero() {
   return (
-    <section id="top" className="grain relative overflow-hidden">
-      {/* Abstract hero composition: shadow, an irregular line, haze, one light source.
-          TO REPLACE: swap this <svg> block for your own web-ready artwork
-          (<img src="/hero.jpg" alt="" />) exported from your private source folder. */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <svg
-          viewBox="0 0 1200 900"
-          preserveAspectRatio="xMidYMid slice"
-          className="h-full w-full"
-          focusable="false"
-        >
-          <defs>
-            <radialGradient id="hero-light" cx="72%" cy="30%" r="52%">
-              <stop offset="0%" stopColor="currentColor" stopOpacity="0.22" />
-              <stop offset="60%" stopColor="currentColor" stopOpacity="0.05" />
-              <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          <rect width="1200" height="900" fill="url(#hero-light)" className="text-foreground" />
-          <g
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="0.8"
-            className="text-foreground/20"
-          >
-            <path d="M-40 780 C 320 700, 300 420, 620 360 S 1080 420, 980 660" />
-            <path d="M40 860 C 420 760, 380 380, 700 320" strokeOpacity="0.55" />
-            <path d="M180 900 C 520 800, 470 340, 800 300" strokeOpacity="0.3" />
-          </g>
-          <circle cx="864" cy="270" r="3" className="fill-ember" opacity="0.9" />
-        </svg>
+    <section
+      id="top"
+      aria-label="Title plate"
+      className="grain relative flex min-h-[100svh] flex-col justify-between px-6 pt-24 pb-8 sm:px-10 sm:pb-10"
+    >
+      <div className="flex flex-1 flex-col items-center justify-center">
+        <Reveal className="flex justify-center">
+          {/* Reduced spiral glyph — upper third */}
+          <LogoMark asset="glyph" tone="ember" className="max-w-[13rem]" />
+        </Reveal>
+
+        <Reveal delay={140} className="mt-10 w-full text-center sm:mt-14">
+          <h1 className="text-balance text-[2.1rem] leading-[1.05] tracking-[0.06em] uppercase sm:text-5xl md:text-6xl">
+            The Spiral Method
+          </h1>
+          <p className="label-editorial mt-6 sm:mt-8">A record of recurring patterns</p>
+        </Reveal>
+
+        <Reveal delay={260} className="mt-12 flex justify-center">
+          {/* Full spiral mark with wordmark — replace via src/data/logos.ts */}
+          <LogoMark asset="full" className="max-w-[18rem]" />
+        </Reveal>
       </div>
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pt-28 pb-16 sm:px-8 sm:pb-24">
-        <Reveal>
-          <p className="label-editorial">Living Archive — 001</p>
-        </Reveal>
-
-        <Reveal delay={120}>
-          <h1 className="mt-8 max-w-3xl text-balance text-[2.6rem] leading-[1.03] sm:text-6xl md:text-7xl">
-            It is not a loop.
-            <br />
-            It is a spiral.
-          </h1>
-        </Reveal>
-
-        <Reveal delay={240}>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            An editorial space for image, form, and memory.
-          </p>
-        </Reveal>
-
-        <Reveal delay={340}>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#archive"
-              className="border border-foreground bg-foreground px-6 py-3 text-center text-xs tracking-[0.18em] text-background uppercase transition-opacity hover:opacity-85"
-            >
-              Explore the archive
-            </a>
-            <a
-              href="#editions"
-              className="border border-border px-6 py-3 text-center text-xs tracking-[0.18em] uppercase transition-colors hover:border-ember hover:text-ember"
-            >
-              View editions
-            </a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={440}>
-          <p className="label-editorial mt-14 border-t border-hairline pt-4">
-            {PLACEHOLDER.heroArtwork}
-          </p>
-        </Reveal>
+      <div className="mt-10 w-full">
+        <div className="h-px w-full bg-metadata/35" />
+        <div className="mt-3 flex items-baseline justify-between gap-6">
+          <span className="label-editorial">TSM · 01 / 09</span>
+          <span className="label-editorial">Manifesto</span>
+        </div>
       </div>
     </section>
   );
