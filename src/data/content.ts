@@ -100,7 +100,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "001",
     number: "A / 001",
-    title: PLACEHOLDER.publicTitle,
+    title: "Threshold", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Observation",
     image: "",
@@ -108,7 +108,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "002",
     number: "A / 002",
-    title: PLACEHOLDER.publicTitle,
+    title: "Displacement", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Constant",
     image: "",
@@ -116,7 +116,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "003",
     number: "A / 003",
-    title: PLACEHOLDER.publicTitle,
+    title: "Interval", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Deviation",
     image: "",
@@ -124,7 +124,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "004",
     number: "A / 004",
-    title: PLACEHOLDER.publicTitle,
+    title: "Residue", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Trace",
     image: "",
@@ -132,7 +132,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "005",
     number: "A / 005",
-    title: PLACEHOLDER.publicTitle,
+    title: "Repetition", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Unresolved",
     image: "",
@@ -140,7 +140,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "006",
     number: "A / 006",
-    title: PLACEHOLDER.publicTitle,
+    title: "Background", // working title — [ADD PUBLIC TITLE]
     note: PLACEHOLDER.editorialNote,
     label: "Observation",
     image: "",
