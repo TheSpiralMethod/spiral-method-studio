@@ -27,8 +27,8 @@ export function Hero() {
           <p className="label-editorial mt-6 sm:mt-8">A record of recurring patterns</p>
         </Reveal>
 
-        {/* The full spiral mark (glyph + wordmark) can replace the glyph above
-            once available — see src/data/logos.ts, LOGOS.full. */}
+
+
       </div>
 
       <div className="mt-10 w-full">
