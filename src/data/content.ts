@@ -89,7 +89,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
   {
     id: "001",
     number: "A / 001",
-    title: "Archive opening later.",
+    title: "The archive is not open yet.",
     note: "Recorded material will appear here when it is ready to be public.",
     label: "Unresolved",
     image: "",
@@ -98,7 +98,7 @@ export const ARCHIVE_ITEMS: ArchiveItem[] = [
 
 /** Editions are presentation-only; nothing is available yet. */
 export const EDITIONS_NOTE = [
-  "Limited physical and digital editions will appear here later.",
+  "Physical and digital editions will appear here when they are ready.",
   "Nothing is available yet.",
 ] as const;
 
