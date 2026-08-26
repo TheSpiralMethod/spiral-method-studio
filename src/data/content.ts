@@ -109,10 +109,9 @@ export const ABOUT_TEXT = [
 ] as const;
 
 export const FOOTER_LINKS = [
-  { label: "Instagram", value: "Instagram — coming soon" },
-  { label: "Contact", value: "Contact — not yet open" },
+  { label: "Instagram", value: "INSTAGRAM — COMING SOON" },
+  { label: "Contact", value: "CONTACT — NOT YET OPEN" },
 ] as const;
-// Footer status lines render uppercase via the label-editorial class on the value.
 
 
 export const FOOTER_LINE = "A record of recurring patterns.";
