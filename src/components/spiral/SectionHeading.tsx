@@ -8,10 +8,10 @@ export function SectionHeading({
   subtitle,
   className,
 }: {
-  eyebrow?: string;
+  eyebrow?: string | undefined;
   title: ReactNode;
-  subtitle?: string;
-  className?: string;
+  subtitle?: string | undefined;
+  className?: string | undefined;
 }) {
   return (
     <Reveal className={cn("max-w-2xl", className)}>

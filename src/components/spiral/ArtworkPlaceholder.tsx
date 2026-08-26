@@ -16,12 +16,12 @@ export function ArtworkPlaceholder({
   className,
   ratio = "portrait",
 }: {
-  variant?: number;
+  variant?: number | undefined;
   label: string;
-  src?: string;
-  alt?: string;
-  className?: string;
-  ratio?: "portrait" | "square" | "wide";
+  src?: string | undefined;
+  alt?: string | undefined;
+  className?: string | undefined;
+  ratio?: "portrait" | "square" | "wide" | undefined;
 }) {
   const ratioClass =
     ratio === "square" ? "aspect-square" : ratio === "wide" ? "aspect-[16/10]" : "aspect-[4/5]";
