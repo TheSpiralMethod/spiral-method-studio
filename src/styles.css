@@ -6,9 +6,10 @@
 
 /*
  * THE SPIRAL METHOD — design system
- * Contemporary noir editorial: warm charcoal ground, bone white type,
- * ash gray secondary, a single restrained ember accent.
- * All colors are oklch semantic tokens. Never hardcode colors in components.
+ * Dark printed editorial record: warm ink ground (#0B0D12), bone paper type
+ * (#EEE8DE), muted blue-gray metadata and rules (#8293A5), rare aged ember
+ * accent (#D9782B). All colors are oklch semantic tokens.
+ * Never hardcode colors in components.
  */
 
 @theme inline {
@@ -33,6 +34,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-metadata: var(--metadata);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-ember: var(--ember);
@@ -46,41 +48,43 @@
 }
 
 :root {
-  --radius: 0.125rem;
+  --radius: 0.0625rem;
 
-  /* warm charcoal black */
-  --background: oklch(0.16 0.006 60);
-  --foreground: oklch(0.93 0.008 85);
+  /* near-black warm ink #0B0D12 */
+  --background: oklch(0.1593 0.0111 268);
+  /* bone / paper #EEE8DE */
+  --foreground: oklch(0.9329 0.0149 80.7);
 
-  --card: oklch(0.2 0.006 60);
-  --card-foreground: oklch(0.93 0.008 85);
-  --popover: oklch(0.18 0.006 60);
-  --popover-foreground: oklch(0.93 0.008 85);
+  --card: oklch(0.19 0.011 268);
+  --card-foreground: oklch(0.9329 0.0149 80.7);
+  --popover: oklch(0.18 0.011 268);
+  --popover-foreground: oklch(0.9329 0.0149 80.7);
 
-  /* bone white as primary surface for buttons */
-  --primary: oklch(0.93 0.008 85);
-  --primary-foreground: oklch(0.16 0.006 60);
+  --primary: oklch(0.9329 0.0149 80.7);
+  --primary-foreground: oklch(0.1593 0.0111 268);
 
-  --secondary: oklch(0.24 0.005 60);
-  --secondary-foreground: oklch(0.93 0.008 85);
+  --secondary: oklch(0.22 0.011 268);
+  --secondary-foreground: oklch(0.9329 0.0149 80.7);
 
-  --muted: oklch(0.22 0.005 60);
-  --muted-foreground: oklch(0.68 0.008 75);
+  --muted: oklch(0.21 0.011 268);
+  /* muted blue-gray #8293A5 — archival metadata and rules */
+  --metadata: oklch(0.6559 0.0332 249.8);
+  --muted-foreground: oklch(0.6559 0.0332 249.8);
 
-  --accent: oklch(0.26 0.006 60);
-  --accent-foreground: oklch(0.93 0.008 85);
+  --accent: oklch(0.24 0.011 268);
+  --accent-foreground: oklch(0.9329 0.0149 80.7);
 
-  /* single restrained aged-amber ember */
-  --ember: oklch(0.68 0.11 62);
-  --ember-foreground: oklch(0.16 0.006 60);
+  /* rare aged ember #D9782B */
+  --ember: oklch(0.6691 0.1483 54.3);
+  --ember-foreground: oklch(0.1593 0.0111 268);
 
   --destructive: oklch(0.58 0.16 27);
   --destructive-foreground: oklch(0.95 0.005 85);
 
-  --border: oklch(0.32 0.006 60);
-  --hairline: oklch(0.93 0.008 85 / 14%);
-  --input: oklch(0.34 0.006 60);
-  --ring: oklch(0.68 0.11 62);
+  --border: oklch(0.6559 0.0332 249.8 / 30%);
+  --hairline: oklch(0.6559 0.0332 249.8 / 28%);
+  --input: oklch(0.6559 0.0332 249.8 / 45%);
+  --ring: oklch(0.6691 0.1483 54.3);
 }
 
 .dark {
