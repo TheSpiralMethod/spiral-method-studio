@@ -18,7 +18,25 @@ export const NAV_LINKS = [
   { label: "Archive", href: "#archive" },
   { label: "Editions", href: "#editions" },
   { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ] as const;
+
+/** Real, public contact points. No forms, no services. */
+export const CONTACT_LINKS = [
+  {
+    label: "Email",
+    value: "thespiralmethod@icloud.com",
+    href: "mailto:thespiralmethod@icloud.com",
+    external: false,
+  },
+  {
+    label: "Instagram",
+    value: "@the_spiral_method",
+    href: "https://instagram.com/the_spiral_method",
+    external: true,
+  },
+] as const;
+
 
 /**
  * MANIFESTO SEQUENCE — 9 editorial plates.
