@@ -40,6 +40,8 @@ function Index() {
         <ArchiveIndex />
         <EditionsSection />
         <AboutSection />
+        <ContactSection />
+
       </main>
       <SiteFooter />
     </div>
