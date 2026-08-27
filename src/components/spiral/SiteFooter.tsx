@@ -1,4 +1,4 @@
-import { COPYRIGHT, FOOTER_LINE, FOOTER_LINKS } from "@/data/content";
+import { CONTACT_LINKS, COPYRIGHT, FOOTER_LINE } from "@/data/content";
 import { LogoMark } from "./LogoMark";
 
 export function SiteFooter() {
@@ -17,16 +17,25 @@ export function SiteFooter() {
             <p className="text-sm leading-relaxed text-metadata">{FOOTER_LINE}</p>
           </div>
 
-          {/* Status lines, kept as plain text — no links or integrations. */}
-          <ul className="space-y-3">
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.label} className="flex items-baseline gap-4">
-                <span className="label-editorial w-24 shrink-0">{link.label}</span>
-                <span className="text-sm text-metadata">{link.value}</span>
+          {/* One quiet row of real contact points. */}
+          <ul className="flex flex-wrap items-baseline gap-x-8 gap-y-3">
+            {CONTACT_LINKS.map((link) => (
+              <li key={link.label} className="flex min-w-0 items-baseline gap-3">
+                <span className="label-editorial shrink-0">{link.label}</span>
+                <a
+                  href={link.href}
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="min-w-0 truncate text-sm text-metadata underline underline-offset-4 transition-colors hover:text-foreground"
+                >
+                  {link.value}
+                </a>
               </li>
             ))}
           </ul>
         </div>
+
 
         <div className="mt-12 h-px w-full bg-metadata/35" />
         <p className="label-editorial mt-4">{COPYRIGHT}</p>
