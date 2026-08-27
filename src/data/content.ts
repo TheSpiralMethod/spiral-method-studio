@@ -91,29 +91,6 @@ export const MANIFESTO_PLATES: ManifestoPlate[] = [
   },
 ];
 
-export type ArchiveItem = {
-  id: string;
-  /** Archive index number, e.g. "A / 001". */
-  number: string;
-  title: string;
-  note: string;
-  label: "Observation" | "Constant" | "Deviation" | "Trace" | "Unresolved";
-  /** Web-ready public image path, e.g. "/archive/001.jpg". Empty = placeholder. */
-  image: string;
-};
-
-/** Temporary single entry until real recorded material is public. */
-export const ARCHIVE_ITEMS: ArchiveItem[] = [
-  {
-    id: "001",
-    number: "A / 001",
-    title: "The archive is not open yet.",
-    note: "Recorded material will appear here when it is ready to be public.",
-    label: "Unresolved",
-    image: "",
-  },
-];
-
 /** Editions are presentation-only; nothing is available yet. */
 export const EDITIONS_NOTE = [
   "Physical and digital editions will appear here when they are ready.",
@@ -125,12 +102,6 @@ export const ABOUT_TEXT = [
   "It does not offer conclusions.",
   "It documents what returns, what remains, and what shifts by too little to explain.",
 ] as const;
-
-export const FOOTER_LINKS = [
-  { label: "Instagram", value: "INSTAGRAM — COMING SOON" },
-  { label: "Contact", value: "CONTACT — NOT YET OPEN" },
-] as const;
-
 
 export const FOOTER_LINE = "A record of recurring patterns.";
 export const COPYRIGHT = "© 2026 The Spiral Method";
