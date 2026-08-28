@@ -91,11 +91,6 @@ export const MANIFESTO_PLATES: ManifestoPlate[] = [
   },
 ];
 
-/** Editions are presentation-only; nothing is available yet. */
-export const EDITIONS_NOTE = [
-  "Physical and digital editions will appear here when they are ready.",
-  "Nothing is available yet.",
-] as const;
 
 export const ABOUT_TEXT = [
   "The Spiral Method is an independent visual and editorial record of recurring patterns.",
