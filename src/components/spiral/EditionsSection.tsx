@@ -1,8 +1,11 @@
-import { EDITIONS, EDITIONS_NOTE } from "@/data/editions";
+import { EDITIONS, EDITIONS_NOTE, EDITIONS_FINE_PRINT } from "@/data/editions";
 import { Reveal } from "./Reveal";
 import { ArchivePlaceholder } from "./ArchivePlaceholder";
 
-/** Editions are presentation-only: no price, cart, inventory, or checkout. */
+/**
+ * Editions: presentation + optional Stripe Payment Links (hosted checkout,
+ * new tab). No cart, no in-app checkout, no inventory.
+ */
 export function EditionsSection() {
   return (
     <section id="editions" className="grain border-t border-metadata/25">
@@ -34,10 +37,32 @@ export function EditionsSection() {
                   <p className="mt-2 max-w-prose text-sm leading-relaxed text-metadata">
                     {edition.summary}
                   </p>
-                  <p className="mt-4 text-xs tracking-wide text-metadata">
-                    {edition.variants.join(" · ")}
-                  </p>
-                  <p className="label-editorial mt-4">Coming soon</p>
+
+                  <ul className="mt-4 space-y-1">
+                    {edition.variants.map((variant) => (
+                      <li
+                        key={variant.name}
+                        className="flex items-baseline gap-2 text-xs tracking-wide text-metadata"
+                      >
+                        <span>{variant.name}</span>
+                        <span aria-hidden="true" className="text-metadata/40">
+                          —
+                        </span>
+                        {variant.order ? (
+                          <a
+                            href={variant.order.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-quiet"
+                          >
+                            {variant.order.label}
+                          </a>
+                        ) : (
+                          <span className="label-editorial">Coming soon</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </article>
             </Reveal>
@@ -47,6 +72,7 @@ export function EditionsSection() {
         <Reveal delay={90}>
           <div className="mt-16 border-t border-metadata/25 pt-8">
             <p className="max-w-prose text-sm leading-relaxed text-metadata">{EDITIONS_NOTE}</p>
+            <p className="mt-4 text-xs tracking-wide text-metadata/70">{EDITIONS_FINE_PRINT}</p>
           </div>
         </Reveal>
       </div>
