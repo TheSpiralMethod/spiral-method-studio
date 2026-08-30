@@ -66,6 +66,30 @@ export const LOGOS = {
     src: "/logo/tsm-lockup-stacked-ink.svg",
     alt: "The Spiral Method",
   },
+  /** Full mark, Smoke Ivory — dark grounds and photography. */
+  fullIvory: {
+    placeholder: "[REPLACE WITH FULL SPIRAL MARK — IVORY]",
+    src: "/logo/tsm-full-mark-ivory.svg",
+    alt: "The Spiral Method",
+  },
+  /** Full mark, 100% black — single-colour production. */
+  fullEngrave: {
+    placeholder: "[REPLACE WITH FULL SPIRAL MARK — ENGRAVE]",
+    src: "/logo/tsm-full-mark-engrave.svg",
+    alt: "The Spiral Method",
+  },
+  /** Reduced glyph, Smoke Ivory. */
+  glyphIvory: {
+    placeholder: "[REPLACE WITH REDUCED SPIRAL GLYPH — IVORY]",
+    src: "/logo/tsm-glyph-ivory.svg",
+    alt: "",
+  },
+  /** Reduced glyph, 100% black — engrave. */
+  glyphEngrave: {
+    placeholder: "[REPLACE WITH REDUCED SPIRAL GLYPH — ENGRAVE]",
+    src: "/logo/tsm-glyph-engrave.svg",
+    alt: "",
+  },
 } satisfies Record<string, LogoAsset>;
 
 export type LogoKey = keyof typeof LOGOS;
