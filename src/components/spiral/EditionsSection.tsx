@@ -25,7 +25,7 @@ export function EditionsSection() {
                     alt={edition.name}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[4/5] w-full object-cover"
+                    className="aspect-[4/5] w-full bg-background object-contain"
                   />
                 ) : (
                   <EditionPlaceholder number={edition.number} />
