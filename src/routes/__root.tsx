@@ -14,19 +14,15 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
+    <div className="grain flex min-h-screen items-center justify-center bg-background px-6">
+      <div className="text-center">
+        <p className="label-editorial">TSM · 404</p>
+        <h1 className="mt-6 text-3xl leading-tight sm:text-4xl">
+          This page is not in the record.
+        </h1>
+        <div className="mt-10">
+          <Link to="/" className="link-quiet">
+            Return to the record
           </Link>
         </div>
       </div>
@@ -42,29 +38,22 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+    <div className="grain flex min-h-screen items-center justify-center bg-background px-6">
+      <div className="text-center">
+        <p className="label-editorial">TSM · Error</p>
+        <h1 className="mt-6 text-3xl leading-tight sm:text-4xl">This page did not load.</h1>
+        <div className="mt-10 flex flex-wrap justify-center gap-8">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="link-quiet"
           >
             Try again
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
+          <a href="/" className="link-quiet">
+            Return to the record
           </a>
         </div>
       </div>
@@ -84,7 +73,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:site_name", content: "The Spiral Method" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://thespiralmethod.life/og.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "The Spiral Method — a record of recurring patterns",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://thespiralmethod.life/og.jpg" },
       { name: "theme-color", content: "#0B0D12" },
     ],
     links: [

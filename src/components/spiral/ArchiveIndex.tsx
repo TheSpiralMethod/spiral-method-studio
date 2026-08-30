@@ -15,6 +15,9 @@ export function ArchiveIndex() {
           <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">Found fragments.</h2>
         </Reveal>
 
+        {ARCHIVE_ENTRIES.length === 0 ? (
+          <p className="label-editorial mt-16">The record is not yet published.</p>
+        ) : (
         <ul className="mt-16 grid grid-cols-1 gap-14 sm:gap-16 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
           {ARCHIVE_ENTRIES.map((entry, i) => {
             const media = entry.image ? (
@@ -70,6 +73,7 @@ export function ArchiveIndex() {
             );
           })}
         </ul>
+        )}
       </div>
     </section>
   );
