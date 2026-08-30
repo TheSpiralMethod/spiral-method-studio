@@ -1,6 +1,6 @@
 import { EDITIONS, EDITIONS_NOTE, EDITIONS_FINE_PRINT } from "@/data/editions";
 import { Reveal } from "./Reveal";
-import { ArchivePlaceholder } from "./ArchivePlaceholder";
+import { EditionPlaceholder } from "./EditionPlaceholder";
 
 /**
  * Editions: presentation + optional Stripe Payment Links (hosted checkout,
@@ -28,7 +28,7 @@ export function EditionsSection() {
                     className="aspect-[4/5] w-full object-cover"
                   />
                 ) : (
-                  <ArchivePlaceholder number={edition.number} />
+                  <EditionPlaceholder number={edition.number} />
                 )}
 
                 <div className="mt-5 border-t border-metadata/25 pt-4">
