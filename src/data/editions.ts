@@ -133,4 +133,4 @@ export const EDITIONS: Edition[] = [
 export const EDITIONS_NOTE =
   "Each edition above is available now, in limited numbers. New objects will appear here as they're made.";
 
-export const EDITIONS_FINE_PRINT = "Limited stock. Orders ship from Mexico.";
+export const EDITIONS_FINE_PRINT = "Limited stock. Shipping within Mexico, included in the price.";
