@@ -131,6 +131,6 @@ export const EDITIONS: Edition[] = [
 ];
 
 export const EDITIONS_NOTE =
-  "Physical and digital editions will appear here when they are ready. Nothing is available yet.";
+  "Each edition above is available now, in limited numbers. New objects will appear here as they're made.";
 
 export const EDITIONS_FINE_PRINT = "Limited stock. Orders ship from Mexico.";
