@@ -99,7 +99,13 @@ export const EDITIONS: Edition[] = [
           url: "https://buy.stripe.com/00wbIUaPv2MtdU7chBgUM00",
         },
       },
-      { name: "A3" },
+      {
+        name: "A3",
+        order: {
+          label: "Order — $299 MXN",
+          url: "https://buy.stripe.com/fZu3co9Lr1Ip8zN6XhgUM03",
+        },
+      },
     ],
     image: "",
   },
