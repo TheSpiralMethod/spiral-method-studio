@@ -100,3 +100,39 @@ export const ABOUT_TEXT = [
 
 export const FOOTER_LINE = "A record of recurring patterns.";
 export const COPYRIGHT = "© 2026 The Spiral Method";
+
+/**
+ * EDITIONS DISCLOSURE — quiet trust copy placed below the editions.
+ * Shipping, returns, and privacy. Subordinate to the work, not a sales pitch.
+ */
+export type EditionsDisclosureSection = {
+  label: string;
+  lines: readonly string[];
+  contact?: { prefix: string; email: string };
+};
+
+export const EDITIONS_DISCLOSURE: EditionsDisclosureSection[] = [
+  {
+    label: "SHIPPING & RETURNS",
+    lines: [
+      "Shipping within Mexico. Included in the price.",
+      "Dispatch times are confirmed by email after each order.",
+      "Returns accepted within 30 days, unworn and in original condition. Return shipping is paid by the buyer, unless the piece arrived damaged or incorrect.",
+    ],
+    contact: { prefix: "Questions and returns:", email: "ivan@thespiralmethod.life" },
+  },
+  {
+    label: "PRIVACY",
+    lines: [
+      "This site runs no analytics and no third-party scripts.",
+      "Payment and shipping details are handled by Stripe and are never stored on this site.",
+      "The only cookies are those set by the host to serve the page.",
+    ],
+  },
+];
+
+/** Footer anchor link to the editions disclosure block. */
+export const FOOTER_POLICY_LINK = {
+  label: "SHIPPING & RETURNS",
+  href: "#shipping-returns",
+} as const;
