@@ -73,6 +73,7 @@ export function ArchiveIndex() {
             );
           })}
         </ul>
+        )}
       </div>
     </section>
   );
