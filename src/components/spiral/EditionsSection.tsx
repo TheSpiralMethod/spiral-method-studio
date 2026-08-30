@@ -1,4 +1,5 @@
 import { EDITIONS, EDITIONS_NOTE, EDITIONS_FINE_PRINT } from "@/data/editions";
+import { EDITIONS_DISCLOSURE } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { EditionPlaceholder } from "./EditionPlaceholder";
 
