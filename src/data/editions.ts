@@ -81,7 +81,7 @@ export const EDITIONS: Edition[] = [
         },
       },
     ],
-    image: "",
+    image: "/products/tee.jpg",
   },
   {
     id: "02",
@@ -107,7 +107,7 @@ export const EDITIONS: Edition[] = [
         },
       },
     ],
-    image: "",
+    image: "/products/print-50x70.jpg",
   },
   {
     id: "03",
@@ -126,7 +126,7 @@ export const EDITIONS: Edition[] = [
         },
       },
     ],
-    image: "",
+    image: "/products/notebook.jpg",
   },
 ];
 
