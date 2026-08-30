@@ -101,7 +101,7 @@ export function EditionsSection() {
                       {section.contact.prefix}{" "}
                       <a
                         href={`mailto:${section.contact.email}`}
-                        className="link-quiet"
+                        className="text-sm text-metadata underline underline-offset-4 transition-colors hover:text-foreground"
                       >
                         {section.contact.email}
                       </a>
