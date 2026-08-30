@@ -42,6 +42,30 @@ export const LOGOS = {
     src: "/logo/tsm-glyph-ink.svg",
     alt: "",
   },
+  /** Horizontal lockup (mark + wordmark), ember. */
+  lockupHorizontal: {
+    placeholder: "[REPLACE WITH HORIZONTAL LOCKUP]",
+    src: "/logo/tsm-lockup-horizontal-ember.svg",
+    alt: "The Spiral Method",
+  },
+  /** Horizontal lockup, ink. */
+  lockupHorizontalInk: {
+    placeholder: "[REPLACE WITH HORIZONTAL LOCKUP — INK]",
+    src: "/logo/tsm-lockup-horizontal-ink.svg",
+    alt: "The Spiral Method",
+  },
+  /** Stacked lockup, ember. */
+  lockupStacked: {
+    placeholder: "[REPLACE WITH STACKED LOCKUP]",
+    src: "/logo/tsm-lockup-stacked-ember.svg",
+    alt: "The Spiral Method",
+  },
+  /** Stacked lockup, ink. */
+  lockupStackedInk: {
+    placeholder: "[REPLACE WITH STACKED LOCKUP — INK]",
+    src: "/logo/tsm-lockup-stacked-ink.svg",
+    alt: "The Spiral Method",
+  },
 } satisfies Record<string, LogoAsset>;
 
 export type LogoKey = keyof typeof LOGOS;
