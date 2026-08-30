@@ -12,7 +12,7 @@ export function EditionsSection() {
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
           <p className="label-editorial">Editions</p>
-          <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">Objects, later.</h2>
+          <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">Objects, now.</h2>
         </Reveal>
 
         <ul className="mt-16 grid grid-cols-1 gap-14 sm:gap-16 md:grid-cols-2 md:gap-x-16 md:gap-y-20 lg:grid-cols-3 lg:gap-x-10">
