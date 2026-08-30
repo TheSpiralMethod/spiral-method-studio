@@ -24,23 +24,4 @@ export type ArchiveEntry = {
   href?: string;
 };
 
-export const ARCHIVE_ENTRIES: ArchiveEntry[] = [
-  {
-    id: "001",
-    number: "FRAGMENT — 001",
-    title: "Perfer et obdura",
-    // [ADD DESCRIPTION]
-    description: "",
-    // [REPLACE WITH ORIGINAL ARTWORK]
-    image: "",
-  },
-  {
-    id: "002",
-    number: "FRAGMENT — 002",
-    title: "A raw and shitty worm through time",
-    // [ADD DESCRIPTION]
-    description: "",
-    // [REPLACE WITH ORIGINAL ARTWORK]
-    image: "",
-  },
-];
+export const ARCHIVE_ENTRIES: ArchiveEntry[] = [];
