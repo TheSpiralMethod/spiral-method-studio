@@ -25,8 +25,8 @@ export const NAV_LINKS = [
 export const CONTACT_LINKS = [
   {
     label: "Email",
-    value: "thespiralmethod@icloud.com",
-    href: "mailto:thespiralmethod@icloud.com",
+    value: "ivan@thespiralmethod.life",
+    href: "mailto:ivan@thespiralmethod.life",
     external: false,
   },
   {

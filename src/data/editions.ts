@@ -45,11 +45,41 @@ export const EDITIONS: Edition[] = [
     detail:
       "A black tee built around one confirmed line: A SPIRAL AS THE ONLY CONSTANT. Quiet placement, no visible front graphic, and one interior amber glyph.",
     variants: [
-      { name: "S" },
-      { name: "M" },
-      { name: "L" },
-      { name: "XL" },
-      { name: "XXL" },
+      {
+        name: "S",
+        order: {
+          label: "Order — $699 MXN",
+          url: "https://buy.stripe.com/eVq14g0aRdr74jxchBgUM02",
+        },
+      },
+      {
+        name: "M",
+        order: {
+          label: "Order — $699 MXN",
+          url: "https://buy.stripe.com/eVq14g0aRdr74jxchBgUM02",
+        },
+      },
+      {
+        name: "L",
+        order: {
+          label: "Order — $699 MXN",
+          url: "https://buy.stripe.com/eVq14g0aRdr74jxchBgUM02",
+        },
+      },
+      {
+        name: "XL",
+        order: {
+          label: "Order — $699 MXN",
+          url: "https://buy.stripe.com/eVq14g0aRdr74jxchBgUM02",
+        },
+      },
+      {
+        name: "XXL",
+        order: {
+          label: "Order — $699 MXN",
+          url: "https://buy.stripe.com/eVq14g0aRdr74jxchBgUM02",
+        },
+      },
     ],
     image: "",
   },
