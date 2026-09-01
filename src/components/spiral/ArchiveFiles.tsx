@@ -51,7 +51,13 @@ export function ArchiveFiles() {
     const dpr = window.devicePixelRatio || 1;
     const w = Math.round(window.screen.width * dpr);
     const h = Math.round(window.screen.height * dpr);
-    if (w > 0 && h > 0 && w <= 8000 && h <= 8000) {
+    if (
+      w > 0 &&
+      h > 0 &&
+      w <= 8000 &&
+      h <= 8000 &&
+      !SIZES.some((s) => s.w === w && s.h === h)
+    ) {
       setSizes([{ w, h, label: `${w} × ${h} — this screen` }, ...SIZES]);
     }
   }, []);
@@ -77,7 +83,7 @@ export function ArchiveFiles() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             io.disconnect();
-            requestAnimationFrame(draw);
+            draw();
           }
         }
       },
@@ -92,7 +98,9 @@ export function ArchiveFiles() {
     setBusy(id);
     setNote((n) => ({ ...n, [id]: `Plotting ${size.w} × ${size.h}…` }));
 
-    await new Promise((r) => requestAnimationFrame(() => r(null)));
+    // Yield with a timer, not requestAnimationFrame: rAF does not fire in a
+    // backgrounded or throttled tab, which left the download hung forever.
+    await new Promise((r) => setTimeout(r, 0));
 
     try {
       const blob = await plotToBlob(id, size.w, size.h);
