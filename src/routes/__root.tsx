@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://thespiralmethod.life/og.jpg" },
-      { name: "theme-color", content: "#0B0D12" },
+      { name: "theme-color", content: "#0D0E10" },
     ],
     links: [
       {
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=IBM+Plex+Mono:wght@400&family=Inter+Tight:wght@300;400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400&family=Inter+Tight:wght@300;400;500&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },

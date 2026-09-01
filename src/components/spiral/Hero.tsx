@@ -21,7 +21,7 @@ export function Hero() {
 
 
         <Reveal delay={140} className="mt-10 w-full text-center sm:mt-14">
-          <h1 className="text-balance text-[2.1rem] leading-[1.05] tracking-[0.06em] uppercase sm:text-5xl md:text-6xl">
+          <h1 className="text-balance font-[family-name:var(--font-meta)] text-[2.1rem] leading-[1.05] font-semibold tracking-[0.28em] uppercase sm:text-5xl md:text-6xl">
             The Spiral Method
           </h1>
           <p className="label-editorial mt-6 sm:mt-8">A record of recurring patterns</p>

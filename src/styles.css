@@ -6,10 +6,10 @@
 
 /*
  * THE SPIRAL METHOD — design system
- * Dark printed editorial record: warm ink ground (#0B0D12), bone paper type
- * (#EEE8DE), muted blue-gray metadata and rules (#8293A5), rare aged ember
- * accent (#D9782B). All colors are oklch semantic tokens.
- * Never hardcode colors in components.
+ * Dark printed editorial record: ink black ground (#0D0E10), smoke ivory paper
+ * type (#E8E1D6), mist blue metadata and rules (#7D9EB2), blue graphite
+ * surfaces (#1A2028), rare aged ember accent (#E58A3A). All colors are oklch
+ * semantic tokens. Never hardcode colors in components.
  */
 
 @theme inline {
@@ -18,7 +18,8 @@
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-meta: var(--font-meta);
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
@@ -35,6 +36,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-metadata: var(--metadata);
+  --color-graphite: var(--graphite);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-ember: var(--ember);
@@ -47,45 +49,52 @@
   --color-ring: var(--ring);
 }
 
+
 :root {
   --radius: 0.0625rem;
 
-  /* near-black warm ink #0B0D12 */
-  --background: oklch(0.1593 0.0111 268);
-  /* bone / paper #EEE8DE */
-  --foreground: oklch(0.9329 0.0149 80.7);
+  --font-meta: "Cormorant Garamond", Garamond, Georgia, serif;
 
-  --card: oklch(0.19 0.011 268);
-  --card-foreground: oklch(0.9329 0.0149 80.7);
-  --popover: oklch(0.18 0.011 268);
-  --popover-foreground: oklch(0.9329 0.0149 80.7);
+  /* ink black #0D0E10 */
+  --background: oklch(0.1635 0.0045 264.4);
+  /* smoke ivory / paper #E8E1D6 */
+  --foreground: oklch(0.9122 0.0166 79.3);
 
-  --primary: oklch(0.9329 0.0149 80.7);
-  --primary-foreground: oklch(0.1593 0.0111 268);
+  /* blue graphite #1A2028 — all raised surfaces */
+  --graphite: oklch(0.2412 0.0177 255.7);
 
-  --secondary: oklch(0.22 0.011 268);
-  --secondary-foreground: oklch(0.9329 0.0149 80.7);
+  --card: var(--graphite);
+  --card-foreground: var(--foreground);
+  --popover: var(--graphite);
+  --popover-foreground: var(--foreground);
 
-  --muted: oklch(0.21 0.011 268);
-  /* muted blue-gray #8293A5 — archival metadata and rules */
-  --metadata: oklch(0.6559 0.0332 249.8);
-  --muted-foreground: oklch(0.6559 0.0332 249.8);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
 
-  --accent: oklch(0.24 0.011 268);
-  --accent-foreground: oklch(0.9329 0.0149 80.7);
+  --secondary: var(--graphite);
+  --secondary-foreground: var(--foreground);
 
-  /* rare aged ember #D9782B */
-  --ember: oklch(0.6691 0.1483 54.3);
-  --ember-foreground: oklch(0.1593 0.0111 268);
+  --muted: var(--graphite);
+  /* mist blue #7D9EB2 — archival metadata and rules */
+  --metadata: oklch(0.6815 0.047 235);
+  --muted-foreground: oklch(0.6815 0.047 235);
+
+  --accent: var(--graphite);
+  --accent-foreground: var(--foreground);
+
+  /* rare aged ember #E58A3A */
+  --ember: oklch(0.7162 0.1442 58.2);
+  --ember-foreground: var(--background);
 
   --destructive: oklch(0.58 0.16 27);
   --destructive-foreground: oklch(0.95 0.005 85);
 
-  --border: oklch(0.6559 0.0332 249.8 / 30%);
-  --hairline: oklch(0.6559 0.0332 249.8 / 28%);
-  --input: oklch(0.6559 0.0332 249.8 / 45%);
-  --ring: oklch(0.6691 0.1483 54.3);
+  --border: oklch(0.6815 0.047 235 / 30%);
+  --hairline: oklch(0.6815 0.047 235 / 28%);
+  --input: oklch(0.6815 0.047 235 / 45%);
+  --ring: var(--ember);
 }
+
 
 .dark {
   color-scheme: dark;
@@ -113,7 +122,7 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.015em;
   }
 
@@ -161,7 +170,8 @@
 
 /* Small editorial label: archive numbers, eyebrows. */
 @utility label-editorial {
-  font-family: var(--font-mono);
+  font-family: var(--font-meta);
+  font-weight: 600;
   font-size: 0.625rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -175,7 +185,8 @@
 /* Quiet order link: small mono label that behaves like the archive numbers,
    not a filled button. Underscored only on hover/keyboard focus. */
 @utility link-quiet {
-  font-family: var(--font-mono);
+  font-family: var(--font-meta);
+  font-weight: 600;
   font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
