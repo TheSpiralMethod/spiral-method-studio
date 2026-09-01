@@ -6,10 +6,10 @@
 
 /*
  * THE SPIRAL METHOD — design system
- * Dark printed editorial record: warm ink ground (#0B0D12), bone paper type
- * (#EEE8DE), muted blue-gray metadata and rules (#8293A5), rare aged ember
- * accent (#D9782B). All colors are oklch semantic tokens.
- * Never hardcode colors in components.
+ * Dark printed editorial record: ink black ground (#0D0E10), smoke ivory paper
+ * type (#E8E1D6), mist blue metadata and rules (#7D9EB2), blue graphite
+ * surfaces (#1A2028), rare aged ember accent (#E58A3A). All colors are oklch
+ * semantic tokens. Never hardcode colors in components.
  */
 
 @theme inline {
@@ -18,7 +18,8 @@
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-meta: var(--font-meta);
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
@@ -35,6 +36,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-metadata: var(--metadata);
+  --color-graphite: var(--graphite);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-ember: var(--ember);
@@ -46,6 +48,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 }
+
 
 :root {
   --radius: 0.0625rem;
