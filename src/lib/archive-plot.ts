@@ -69,9 +69,9 @@ function grain(ctx: CanvasRenderingContext2D, w: number, h: number): void {
     for (let x = 0; x < w; x += 3) {
       if (Math.floor(rnd() * 100) > 72) {
         const i = row + x * 4;
-        d[i] = Math.min(255, d[i] + 6);
-        d[i + 1] = Math.min(255, d[i + 1] + 6);
-        d[i + 2] = Math.min(255, d[i + 2] + 6);
+        d[i] = Math.min(255, (d[i] ?? 0) + 6);
+        d[i + 1] = Math.min(255, (d[i + 1] ?? 0) + 6);
+        d[i + 2] = Math.min(255, (d[i + 2] ?? 0) + 6);
       }
     }
   }
@@ -180,7 +180,7 @@ function plotReturnMap(ctx: CanvasRenderingContext2D, w: number, h: number): voi
     ctx.fill();
   }
 
-  const last = pts[pts.length - 1];
+  const last = pts[pts.length - 1] ?? [0, 0];
   ctx.fillStyle = `rgba(${EMBER},0.922)`;
   ctx.beginPath();
   ctx.arc(cx + last[0] * sc, cy - last[1] * sc, 4.6 * k, 0, 2 * Math.PI);

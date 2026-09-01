@@ -88,7 +88,7 @@ export function ArchiveFiles() {
   }, []);
 
   async function take(id: PlotId, title: string) {
-    const size = sizes[chosen];
+    const size = sizes[chosen] ?? SIZES[0];
     setBusy(id);
     setNote((n) => ({ ...n, [id]: `Plotting ${size.w} × ${size.h}…` }));
 
