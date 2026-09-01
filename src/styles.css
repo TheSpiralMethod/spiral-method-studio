@@ -53,42 +53,48 @@
 :root {
   --radius: 0.0625rem;
 
-  /* near-black warm ink #0B0D12 */
-  --background: oklch(0.1593 0.0111 268);
-  /* bone / paper #EEE8DE */
-  --foreground: oklch(0.9329 0.0149 80.7);
+  --font-meta: "Cormorant Garamond", Garamond, Georgia, serif;
 
-  --card: oklch(0.19 0.011 268);
-  --card-foreground: oklch(0.9329 0.0149 80.7);
-  --popover: oklch(0.18 0.011 268);
-  --popover-foreground: oklch(0.9329 0.0149 80.7);
+  /* ink black #0D0E10 */
+  --background: oklch(0.1635 0.0045 264.4);
+  /* smoke ivory / paper #E8E1D6 */
+  --foreground: oklch(0.9122 0.0166 79.3);
 
-  --primary: oklch(0.9329 0.0149 80.7);
-  --primary-foreground: oklch(0.1593 0.0111 268);
+  /* blue graphite #1A2028 — all raised surfaces */
+  --graphite: oklch(0.2412 0.0177 255.7);
 
-  --secondary: oklch(0.22 0.011 268);
-  --secondary-foreground: oklch(0.9329 0.0149 80.7);
+  --card: var(--graphite);
+  --card-foreground: var(--foreground);
+  --popover: var(--graphite);
+  --popover-foreground: var(--foreground);
 
-  --muted: oklch(0.21 0.011 268);
-  /* muted blue-gray #8293A5 — archival metadata and rules */
-  --metadata: oklch(0.6559 0.0332 249.8);
-  --muted-foreground: oklch(0.6559 0.0332 249.8);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
 
-  --accent: oklch(0.24 0.011 268);
-  --accent-foreground: oklch(0.9329 0.0149 80.7);
+  --secondary: var(--graphite);
+  --secondary-foreground: var(--foreground);
 
-  /* rare aged ember #D9782B */
-  --ember: oklch(0.6691 0.1483 54.3);
-  --ember-foreground: oklch(0.1593 0.0111 268);
+  --muted: var(--graphite);
+  /* mist blue #7D9EB2 — archival metadata and rules */
+  --metadata: oklch(0.6815 0.047 235);
+  --muted-foreground: oklch(0.6815 0.047 235);
+
+  --accent: var(--graphite);
+  --accent-foreground: var(--foreground);
+
+  /* rare aged ember #E58A3A */
+  --ember: oklch(0.7162 0.1442 58.2);
+  --ember-foreground: var(--background);
 
   --destructive: oklch(0.58 0.16 27);
   --destructive-foreground: oklch(0.95 0.005 85);
 
-  --border: oklch(0.6559 0.0332 249.8 / 30%);
-  --hairline: oklch(0.6559 0.0332 249.8 / 28%);
-  --input: oklch(0.6559 0.0332 249.8 / 45%);
-  --ring: oklch(0.6691 0.1483 54.3);
+  --border: oklch(0.6815 0.047 235 / 30%);
+  --hairline: oklch(0.6815 0.047 235 / 28%);
+  --input: oklch(0.6815 0.047 235 / 45%);
+  --ring: var(--ember);
 }
+
 
 .dark {
   color-scheme: dark;
