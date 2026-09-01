@@ -122,7 +122,7 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.015em;
   }
 
@@ -170,7 +170,8 @@
 
 /* Small editorial label: archive numbers, eyebrows. */
 @utility label-editorial {
-  font-family: var(--font-mono);
+  font-family: var(--font-meta);
+  font-weight: 600;
   font-size: 0.625rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -184,7 +185,8 @@
 /* Quiet order link: small mono label that behaves like the archive numbers,
    not a filled button. Underscored only on hover/keyboard focus. */
 @utility link-quiet {
-  font-family: var(--font-mono);
+  font-family: var(--font-meta);
+  font-weight: 600;
   font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
