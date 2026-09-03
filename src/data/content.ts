@@ -13,13 +13,25 @@
 export const WORDMARK = "The Spiral Method";
 export const SUBLINE = "A record of recurring patterns";
 
-export const NAV_LINKS = [
+/**
+ * Editions / store toggle.
+ * Set to `true` to bring the Editions section, its disclosure block, the nav
+ * link, and the footer policy link back online. Currently `false` because the
+ * store is temporarily offline. One-line change here restores everything.
+ */
+export const SHOW_EDITIONS = false;
+
+const ALL_NAV_LINKS = [
   { label: "Manifesto", href: "#manifesto" },
   { label: "Archive", href: "#archive" },
   { label: "Editions", href: "#editions" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ] as const;
+
+export const NAV_LINKS = SHOW_EDITIONS
+  ? ALL_NAV_LINKS
+  : ALL_NAV_LINKS.filter((link) => link.href !== "#editions");
 
 /** Real, public contact points. No forms, no services. */
 export const CONTACT_LINKS = [
