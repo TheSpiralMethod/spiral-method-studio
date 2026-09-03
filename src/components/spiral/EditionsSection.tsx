@@ -66,21 +66,23 @@ export function EditionsSection() {
                   </p>
 
                   <div className="mt-4">
-                    {STRIPE_BOOK_PREORDER_URL ? (
+                    {EDITION_URL[edition.id] ? (
                       <a
-                        href={STRIPE_BOOK_PREORDER_URL}
+                        href={EDITION_URL[edition.id]}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-quiet"
                       >
-                        Pre-order — {edition.price}
+                        {edition.status === "PRE-ORDER"
+                          ? `Pre-order — ${edition.price}`
+                          : `Order — ${edition.price}`}
                       </a>
                     ) : (
                       <span
                         aria-disabled="true"
                         className="label-editorial text-metadata/50"
                       >
-                        Pre-order — soon
+                        {EDITION_DISABLED_LABEL[edition.id]}
                       </span>
                     )}
                   </div>
