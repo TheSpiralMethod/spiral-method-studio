@@ -64,10 +64,9 @@ function Index() {
         <ManifestoSection />
         <ArchiveIndex />
         <ArchiveFiles />
-        <EditionsSection />
+        {SHOW_EDITIONS ? <EditionsSection /> : null}
         <AboutSection />
         <ContactSection />
-
       </main>
       <SiteFooter />
     </div>
