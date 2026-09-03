@@ -33,7 +33,11 @@ export type Edition = {
   price: string;
   status: string;
   availability: string;
-  /** Web-ready public path; "" renders a textured 4:5 placeholder. */
+  /**
+   * Covers are rendered as SVG via BookCover — no image files needed.
+   * These fields stay empty until real photographs of the printed object
+   * replace the vector covers.
+   */
   image: string;
 };
 
@@ -47,7 +51,7 @@ export const EDITIONS: Edition[] = [
     price: "MXN $220",
     status: "PRE-ORDER",
     availability: "Printed to order. Shipping within four weeks of order.",
-    image: "/products/producto_01_libro.png",
+    image: "",
   },
   {
     id: "02",
@@ -57,7 +61,7 @@ export const EDITIONS: Edition[] = [
     price: "MXN $90",
     status: "AVAILABLE",
     availability: "Delivered by email after purchase.",
-    image: "/products/producto_02_pdf.png",
+    image: "",
   },
 ];
 
