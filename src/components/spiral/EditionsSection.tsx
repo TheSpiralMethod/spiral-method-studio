@@ -1,11 +1,18 @@
-import { EDITIONS, EDITIONS_NOTE, EDITIONS_FINE_PRINT } from "@/data/editions";
+import {
+  EDITIONS,
+  EDITIONS_NOTE,
+  EDITIONS_FINE_PRINT,
+  STRIPE_BOOK_PREORDER_URL,
+} from "@/data/editions";
 import { EDITIONS_DISCLOSURE } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { EditionPlaceholder } from "./EditionPlaceholder";
 
 /**
- * Editions: presentation + optional Stripe Payment Links (hosted checkout,
- * new tab). No cart, no in-app checkout, no inventory.
+ * Editions: presentation of the book pre-order + optional Stripe Payment
+ * Link (hosted checkout, new tab). No cart, no in-app checkout, no inventory.
+ * While STRIPE_BOOK_PREORDER_URL is empty, the order control renders as
+ * disabled, non-clickable text — never a dead link.
  */
 export function EditionsSection() {
   return (
@@ -23,47 +30,47 @@ export function EditionsSection() {
                 {edition.image ? (
                   <img
                     src={edition.image}
-                    alt={edition.name}
+                    alt={edition.title}
                     loading="lazy"
                     decoding="async"
                     className="aspect-[4/5] w-full bg-background object-contain"
                   />
                 ) : (
-                  <EditionPlaceholder number={edition.number} />
+                  <EditionPlaceholder number={edition.status} />
                 )}
 
                 <div className="mt-5 border-t border-metadata/25 pt-4">
-                  <p className="label-editorial">{edition.number}</p>
-                  <h3 className="mt-3 text-xl leading-snug sm:text-2xl">{edition.name}</h3>
+                  <p className="label-editorial">{edition.status}</p>
+                  <h3 className="mt-3 text-xl leading-snug sm:text-2xl">{edition.title}</h3>
+                  <p className="mt-2 text-sm tracking-wide text-metadata">{edition.format}</p>
                   <p className="mt-2 max-w-prose text-sm leading-relaxed text-metadata">
-                    {edition.summary}
+                    {edition.description}
                   </p>
 
-                  <ul className="mt-4 space-y-1">
-                    {edition.variants.map((variant) => (
-                      <li
-                        key={variant.name}
-                        className="flex items-baseline gap-2 text-xs tracking-wide text-metadata"
+                  <p className="mt-4 text-sm text-foreground">{edition.price}</p>
+                  <p className="mt-1 text-xs tracking-wide text-metadata/70">
+                    {edition.availability}
+                  </p>
+
+                  <div className="mt-4">
+                    {STRIPE_BOOK_PREORDER_URL ? (
+                      <a
+                        href={STRIPE_BOOK_PREORDER_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-quiet"
                       >
-                        <span>{variant.name}</span>
-                        <span aria-hidden="true" className="text-metadata/40">
-                          —
-                        </span>
-                        {variant.order ? (
-                          <a
-                            href={variant.order.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="link-quiet"
-                          >
-                            {variant.order.label}
-                          </a>
-                        ) : (
-                          <span className="label-editorial">Coming soon</span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                        Pre-order — {edition.price}
+                      </a>
+                    ) : (
+                      <span
+                        aria-disabled="true"
+                        className="label-editorial text-metadata/50"
+                      >
+                        Pre-order — soon
+                      </span>
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -96,17 +103,6 @@ export function EditionsSection() {
                       </li>
                     ))}
                   </ul>
-                  {section.contact ? (
-                    <p className="mt-4 text-sm leading-relaxed text-metadata">
-                      {section.contact.prefix}{" "}
-                      <a
-                        href={`mailto:${section.contact.email}`}
-                        className="text-sm text-metadata underline underline-offset-4 transition-colors hover:text-foreground"
-                      >
-                        {section.contact.email}
-                      </a>
-                    </p>
-                  ) : null}
                 </div>
               ))}
             </div>
