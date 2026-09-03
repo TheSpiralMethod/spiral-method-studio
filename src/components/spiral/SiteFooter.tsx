@@ -1,4 +1,4 @@
-import { CONTACT_LINKS, COPYRIGHT, FOOTER_LINE, FOOTER_POLICY_LINK } from "@/data/content";
+import { CONTACT_LINKS, COPYRIGHT, FOOTER_LINE, FOOTER_POLICY_LINK, SHOW_EDITIONS } from "@/data/content";
 import { LogoMark } from "./LogoMark";
 
 export function SiteFooter() {
