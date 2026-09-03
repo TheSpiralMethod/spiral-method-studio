@@ -3,10 +3,23 @@ import {
   EDITIONS_NOTE,
   EDITIONS_FINE_PRINT,
   STRIPE_BOOK_PREORDER_URL,
+  STRIPE_BOOK_PDF_URL,
 } from "@/data/editions";
 import { EDITIONS_DISCLOSURE } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { EditionPlaceholder } from "./EditionPlaceholder";
+
+/** Each edition's own checkout URL, keyed by id. Empty → disabled text. */
+const EDITION_URL: Record<string, string> = {
+  "01": STRIPE_BOOK_PREORDER_URL,
+  "02": STRIPE_BOOK_PDF_URL,
+};
+
+/** Disabled fallback label per edition id. */
+const EDITION_DISABLED_LABEL: Record<string, string> = {
+  "01": "Pre-order — soon",
+  "02": "Available soon",
+};
 
 /**
  * Editions: presentation of the book pre-order + optional Stripe Payment
