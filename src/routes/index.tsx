@@ -10,6 +10,7 @@ import { AboutSection } from "@/components/spiral/AboutSection";
 import { ContactSection } from "@/components/spiral/ContactSection";
 
 import { SiteFooter } from "@/components/spiral/SiteFooter";
+import { SHOW_EDITIONS } from "@/data/content";
 
 const TITLE = "The Spiral Method — A Record of Recurring Patterns";
 const DESCRIPTION =
@@ -63,10 +64,9 @@ function Index() {
         <ManifestoSection />
         <ArchiveIndex />
         <ArchiveFiles />
-        <EditionsSection />
+        {SHOW_EDITIONS ? <EditionsSection /> : null}
         <AboutSection />
         <ContactSection />
-
       </main>
       <SiteFooter />
     </div>

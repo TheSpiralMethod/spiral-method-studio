@@ -1,4 +1,4 @@
-import { CONTACT_LINKS, COPYRIGHT, FOOTER_LINE, FOOTER_POLICY_LINK } from "@/data/content";
+import { CONTACT_LINKS, COPYRIGHT, FOOTER_LINE, FOOTER_POLICY_LINK, SHOW_EDITIONS } from "@/data/content";
 import { LogoMark } from "./LogoMark";
 
 export function SiteFooter() {
@@ -33,14 +33,16 @@ export function SiteFooter() {
                 </a>
               </li>
             ))}
-            <li className="flex items-baseline">
-              <a
-                href={FOOTER_POLICY_LINK.href}
-                className="text-sm text-metadata underline underline-offset-4 transition-colors hover:text-foreground"
-              >
-                {FOOTER_POLICY_LINK.label}
-              </a>
-            </li>
+            {SHOW_EDITIONS ? (
+              <li className="flex items-baseline">
+                <a
+                  href={FOOTER_POLICY_LINK.href}
+                  className="text-sm text-metadata underline underline-offset-4 transition-colors hover:text-foreground"
+                >
+                  {FOOTER_POLICY_LINK.label}
+                </a>
+              </li>
+            ) : null}
           </ul>
         </div>
 
