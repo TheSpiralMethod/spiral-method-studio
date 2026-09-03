@@ -114,24 +114,21 @@ export const FOOTER_LINE = "A record of recurring patterns.";
 export const COPYRIGHT = "© 2026 The Spiral Method";
 
 /**
- * EDITIONS DISCLOSURE — quiet trust copy placed below the editions.
+ * EDITIONS DISCLOSURE — quiet trust copy placed below the book pre-order.
  * Shipping, returns, and privacy. Subordinate to the work, not a sales pitch.
  */
 export type EditionsDisclosureSection = {
   label: string;
   lines: readonly string[];
-  contact?: { prefix: string; email: string };
 };
 
 export const EDITIONS_DISCLOSURE: EditionsDisclosureSection[] = [
   {
     label: "SHIPPING & RETURNS",
     lines: [
-      "Shipping within Mexico. Included in the price.",
-      "Dispatch times are confirmed by email after each order.",
-      "Returns accepted within 30 days, unworn and in original condition. Return shipping is paid by the buyer, unless the piece arrived damaged or incorrect.",
+      "Printed to order. Shipped within four weeks of order.",
+      "Returns accepted within 30 days, unread and in original condition. Return shipping is paid by the buyer, unless the book arrived damaged or incorrect.",
     ],
-    contact: { prefix: "Questions and returns:", email: "ivan@thespiralmethod.life" },
   },
   {
     label: "PRIVACY",
