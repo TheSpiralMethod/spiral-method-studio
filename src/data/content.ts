@@ -16,10 +16,10 @@ export const SUBLINE = "A record of recurring patterns";
 /**
  * Editions / store toggle.
  * Set to `true` to bring the Editions section, its disclosure block, the nav
- * link, and the footer policy link back online. Currently `false` because the
- * store is temporarily offline. One-line change here restores everything.
+ * link, and the footer policy link back online. Currently `true` — the store
+ * is live for the printed book pre-order. Set to `false` to take it offline.
  */
-export const SHOW_EDITIONS = false;
+export const SHOW_EDITIONS = true;
 
 const ALL_NAV_LINKS = [
   { label: "Manifesto", href: "#manifesto" },
