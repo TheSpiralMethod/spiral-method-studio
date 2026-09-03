@@ -8,6 +8,37 @@ import {
 import { EDITIONS_DISCLOSURE } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { EditionPlaceholder } from "./EditionPlaceholder";
+import { useState } from "react";
+
+/**
+ * Renders an edition image, falling back to the textured EditionPlaceholder
+ * if the file is missing or fails to load (no broken-image icon). This keeps
+ * the layout intact even when an image path is set before the file is uploaded.
+ */
+function EditionImage({
+  src,
+  alt,
+  status,
+}: {
+  src: string;
+  alt: string;
+  status: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return <EditionPlaceholder number={status} />;
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      onError={() => setFailed(true)}
+      className="aspect-[4/5] w-full bg-background object-contain"
+    />
+  );
+}
 
 /** Each edition's own checkout URL, keyed by id. Empty → disabled text. */
 const EDITION_URL: Record<string, string> = {
@@ -40,17 +71,11 @@ export function EditionsSection() {
           {EDITIONS.map((edition, i) => (
             <Reveal as="li" key={edition.id} delay={(i % 3) * 90}>
               <article>
-                {edition.image ? (
-                  <img
-                    src={edition.image}
-                    alt={edition.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-[4/5] w-full bg-background object-contain"
-                  />
-                ) : (
-                  <EditionPlaceholder number={edition.status} />
-                )}
+                <EditionImage
+                  src={edition.image}
+                  alt={edition.title}
+                  status={edition.status}
+                />
 
                 <div className="mt-5 border-t border-metadata/25 pt-4">
                   <p className="label-editorial">{edition.status}</p>

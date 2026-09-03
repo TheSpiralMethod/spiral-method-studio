@@ -16,7 +16,7 @@
  * Paste the hosted-checkout URL here before enabling the section.
  * The Editions section MUST NOT be published while this is empty.
  */
-export const STRIPE_BOOK_PREORDER_URL = "";
+export const STRIPE_BOOK_PREORDER_URL = "https://buy.stripe.com/cNieV6bTz4UBbLZ6XhgUM04";
 
 /**
  * Stripe Payment Link for the PDF edition.
@@ -47,7 +47,7 @@ export const EDITIONS: Edition[] = [
     price: "MXN $220",
     status: "PRE-ORDER",
     availability: "Printed to order. Shipping within four weeks of order.",
-    image: "",
+    image: "/products/producto_01_libro.png",
   },
   {
     id: "02",
@@ -57,7 +57,7 @@ export const EDITIONS: Edition[] = [
     price: "MXN $90",
     status: "AVAILABLE",
     availability: "Delivered by email after purchase.",
-    image: "",
+    image: "/products/producto_02_pdf.png",
   },
 ];
 
