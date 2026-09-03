@@ -3,10 +3,23 @@ import {
   EDITIONS_NOTE,
   EDITIONS_FINE_PRINT,
   STRIPE_BOOK_PREORDER_URL,
+  STRIPE_BOOK_PDF_URL,
 } from "@/data/editions";
 import { EDITIONS_DISCLOSURE } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { EditionPlaceholder } from "./EditionPlaceholder";
+
+/** Each edition's own checkout URL, keyed by id. Empty → disabled text. */
+const EDITION_URL: Record<string, string> = {
+  "01": STRIPE_BOOK_PREORDER_URL,
+  "02": STRIPE_BOOK_PDF_URL,
+};
+
+/** Disabled fallback label per edition id. */
+const EDITION_DISABLED_LABEL: Record<string, string> = {
+  "01": "Pre-order — soon",
+  "02": "Available soon",
+};
 
 /**
  * Editions: presentation of the book pre-order + optional Stripe Payment
@@ -53,21 +66,23 @@ export function EditionsSection() {
                   </p>
 
                   <div className="mt-4">
-                    {STRIPE_BOOK_PREORDER_URL ? (
+                    {EDITION_URL[edition.id] ? (
                       <a
-                        href={STRIPE_BOOK_PREORDER_URL}
+                        href={EDITION_URL[edition.id]}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-quiet"
                       >
-                        Pre-order — {edition.price}
+                        {edition.status === "PRE-ORDER"
+                          ? `Pre-order — ${edition.price}`
+                          : `Order — ${edition.price}`}
                       </a>
                     ) : (
                       <span
                         aria-disabled="true"
                         className="label-editorial text-metadata/50"
                       >
-                        Pre-order — soon
+                        {EDITION_DISABLED_LABEL[edition.id]}
                       </span>
                     )}
                   </div>

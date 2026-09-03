@@ -1,21 +1,29 @@
 /**
- * EDITIONS — the book.
+ * EDITIONS — the book and its digital edition.
  *
- * A single product: "Segundas acepciones", sold as a pre-order.
- * No cart, no checkout, no inventory in-app. A Stripe Payment Link
- * handles hosted checkout (payment, shipping address) on Stripe's page.
+ * Two products: the printed book "Segundas acepciones" (pre-order) and its
+ * PDF edition (available). No cart, no checkout, no inventory in-app.
+ * Stripe Payment Links handle hosted checkout on Stripe's own page.
  *
- * STRIPE_BOOK_PREORDER_URL must hold the Stripe Payment Link before the
- * Editions section is published. While it is empty, the order control
- * renders as disabled, non-clickable text — never a dead link.
+ * STRIPE_BOOK_PREORDER_URL and STRIPE_BOOK_PDF_URL must hold their Stripe
+ * Payment Links before the Editions section is published. While a URL is
+ * empty, that edition's order control renders as disabled, non-clickable
+ * text — never a dead link.
  */
 
 /**
- * Stripe Payment Link for the book pre-order.
+ * Stripe Payment Link for the printed book pre-order.
  * Paste the hosted-checkout URL here before enabling the section.
  * The Editions section MUST NOT be published while this is empty.
  */
 export const STRIPE_BOOK_PREORDER_URL = "";
+
+/**
+ * Stripe Payment Link for the PDF edition.
+ * Paste the hosted-checkout URL here before enabling the section.
+ * The Editions section MUST NOT be published while this is empty.
+ */
+export const STRIPE_BOOK_PDF_URL = "";
 
 export type Edition = {
   id: string;
@@ -41,8 +49,19 @@ export const EDITIONS: Edition[] = [
     availability: "Printed to order. Shipping within four weeks of order.",
     image: "",
   },
+  {
+    id: "02",
+    title: "Segundas acepciones — PDF",
+    format: "Digital · 69 pages · 66 entries",
+    description: "The complete book as a PDF. Available worldwide, no shipping.",
+    price: "MXN $90",
+    status: "AVAILABLE",
+    availability: "Delivered by email after purchase.",
+    image: "",
+  },
 ];
 
-export const EDITIONS_NOTE = "The book is available to pre-order. Printed to order.";
+export const EDITIONS_NOTE =
+  "The book is available to pre-order, printed to order. The PDF is available now, anywhere.";
 
 export const EDITIONS_FINE_PRINT = "Printed to order. Shipping within four weeks of order.";

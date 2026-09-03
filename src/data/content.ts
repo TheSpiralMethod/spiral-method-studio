@@ -126,6 +126,7 @@ export const EDITIONS_DISCLOSURE: EditionsDisclosureSection[] = [
   {
     label: "SHIPPING & RETURNS",
     lines: [
+      "The printed book ships within Mexico only. Shipping is included in the price.",
       "Printed to order. Shipped within four weeks of order.",
       "Returns accepted within 30 days, unread and in original condition. Return shipping is paid by the buyer, unless the book arrived damaged or incorrect.",
     ],
