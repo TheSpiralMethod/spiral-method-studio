@@ -114,36 +114,37 @@ export const FOOTER_LINE = "A record of recurring patterns.";
 export const COPYRIGHT = "© 2026 The Spiral Method";
 
 /**
- * EDITIONS DISCLOSURE — quiet trust copy placed below the book pre-order.
- * Shipping, returns, and privacy. Subordinate to the work, not a sales pitch.
+ * POLICY COPY — served at /shipping-returns and /privacy, linked only from
+ * the footer. Kept out of the Editions section so the store reads as the work
+ * and not as terms.
  */
-export type EditionsDisclosureSection = {
-  label: string;
-  lines: readonly string[];
-};
+export const SHIPPING_RETURNS_LINES = [
+  "The printed book ships within Mexico only. Shipping is included in the price.",
+  "Printed to order. Shipped within four weeks of order.",
+  "Returns accepted within 30 days, unread and in original condition. Return shipping is paid by the buyer, unless the book arrived damaged or incorrect.",
+] as const;
 
-export const EDITIONS_DISCLOSURE: EditionsDisclosureSection[] = [
-  {
-    label: "SHIPPING & RETURNS",
-    lines: [
-      "The printed book ships within Mexico only. Shipping is included in the price.",
-      "Printed to order. Shipped within four weeks of order.",
-      "Returns accepted within 30 days, unread and in original condition. Return shipping is paid by the buyer, unless the book arrived damaged or incorrect.",
-    ],
-  },
-  {
-    label: "PRIVACY",
-    lines: [
-      "No analytics. No tracking.",
-      "Typefaces load from Google Fonts, which sees your IP address.",
-      "Payment is handled by Stripe, on Stripe's pages. Card details never reach this site.",
-      "The only cookies are those the host sets to serve the page.",
-    ],
-  },
-];
+export const PRIVACY_LINES = [
+  "No analytics. No tracking.",
+  "Typefaces load from Google Fonts, which sees your IP address.",
+  "Payment is handled by Stripe, on Stripe's pages. Card details never reach this site.",
+  "The only cookies are those the host sets to serve the page.",
+] as const;
 
-/** Footer anchor link to the editions disclosure block. */
-export const FOOTER_POLICY_LINK = {
-  label: "SHIPPING & RETURNS",
-  href: "#shipping-returns",
+/** The footer's only links. Policy pages, not navigation. */
+export const FOOTER_LEGAL_LINKS = [
+  { label: "SHIPPING & RETURNS", href: "/shipping-returns" },
+  { label: "PRIVACY", href: "/privacy" },
+] as const;
+
+/**
+ * SECTION INDEX — the lower half's counterpart to the manifesto's
+ * "TSM · 01 / 09". Same treatment, letters instead of numbers, so the
+ * record and the shop read as one continuous document.
+ */
+export const SECTION_INDEX = {
+  archive: "TSM · A — ARCHIVE",
+  editions: "TSM · B — EDITIONS",
+  about: "TSM · C — ABOUT",
+  contact: "TSM · D — CONTACT",
 } as const;

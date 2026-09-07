@@ -52,8 +52,3 @@ export const EDITIONS: Edition[] = [
  */
 export const PRINTED_EDITION_LINE =
   "Segundas acepciones — printed edition. 140 × 216 mm, 88 pages, 66 entries. Not yet open.";
-
-export const EDITIONS_NOTE =
-  "The book is available to pre-order, printed to order. The PDF is available now, anywhere.";
-
-export const EDITIONS_FINE_PRINT = "Printed to order. Shipping within four weeks of order.";

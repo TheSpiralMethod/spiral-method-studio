@@ -1,11 +1,9 @@
 import {
   EDITIONS,
-  EDITIONS_NOTE,
-  EDITIONS_FINE_PRINT,
   PRINTED_EDITION_LINE,
   STRIPE_BOOK_PDF_URL,
 } from "@/data/editions";
-import { EDITIONS_DISCLOSURE } from "@/data/content";
+import { SECTION_INDEX } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { BookCover } from "./BookCover";
 
@@ -95,37 +93,6 @@ export function EditionsSection() {
           </p>
         </Reveal>
 
-        <Reveal delay={90}>
-          <div className="mt-16 border-t border-metadata/25 pt-8">
-            <p className="max-w-prose text-sm leading-relaxed text-metadata">{EDITIONS_NOTE}</p>
-            <p className="mt-4 text-xs tracking-wide text-metadata/70">{EDITIONS_FINE_PRINT}</p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={90}>
-          <div
-            id="shipping-returns"
-            className="mt-16 scroll-mt-20 border-t border-metadata/25 pt-8"
-          >
-            <div className="space-y-10">
-              {EDITIONS_DISCLOSURE.map((section) => (
-                <div key={section.label}>
-                  <p className="label-editorial">{section.label}</p>
-                  <ul className="mt-4 space-y-2">
-                    {section.lines.map((line) => (
-                      <li
-                        key={line}
-                        className="max-w-prose text-sm leading-relaxed text-metadata"
-                      >
-                        {line}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

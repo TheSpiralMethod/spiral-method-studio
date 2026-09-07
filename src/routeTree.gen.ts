@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as DownloadSegundasAcepcionesX7k2m9RouteImport } from './routes/download.segundas-acepciones-x7k2m9'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +25,16 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShippingReturnsRoute = ShippingReturnsRouteImport.update({
+  id: '/shipping-returns',
+  path: '/shipping-returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DownloadSegundasAcepcionesX7k2m9Route =
   DownloadSegundasAcepcionesX7k2m9RouteImport.update({
     id: '/download/segundas-acepciones-x7k2m9',
@@ -32,30 +44,54 @@ const DownloadSegundasAcepcionesX7k2m9Route =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
+  fullPaths:
+    | '/'
+    | '/privacy'
+    | '/shipping-returns'
+    | '/sitemap.xml'
+    | '/download/segundas-acepciones-x7k2m9'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
-  id: '__root__' | '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
+  to:
+    | '/'
+    | '/privacy'
+    | '/shipping-returns'
+    | '/sitemap.xml'
+    | '/download/segundas-acepciones-x7k2m9'
+  id:
+    | '__root__'
+    | '/'
+    | '/privacy'
+    | '/shipping-returns'
+    | '/sitemap.xml'
+    | '/download/segundas-acepciones-x7k2m9'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ShippingReturnsRoute: typeof ShippingReturnsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   DownloadSegundasAcepcionesX7k2m9Route: typeof DownloadSegundasAcepcionesX7k2m9Route
 }
@@ -76,6 +112,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shipping-returns': {
+      id: '/shipping-returns'
+      path: '/shipping-returns'
+      fullPath: '/shipping-returns'
+      preLoaderRoute: typeof ShippingReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/download/segundas-acepciones-x7k2m9': {
       id: '/download/segundas-acepciones-x7k2m9'
       path: '/download/segundas-acepciones-x7k2m9'
@@ -88,6 +138,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivacyRoute: PrivacyRoute,
+  ShippingReturnsRoute: ShippingReturnsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   DownloadSegundasAcepcionesX7k2m9Route: DownloadSegundasAcepcionesX7k2m9Route,
 }

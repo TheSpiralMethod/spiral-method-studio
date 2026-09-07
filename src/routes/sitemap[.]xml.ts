@@ -12,11 +12,14 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        // This is a single-page site: only the root route "/" is indexable.
         // The Manifesto / Archive / Editions / About / Contact sections are
-        // in-page hash anchors on "/", not separate crawlable URLs.
+        // in-page hash anchors on "/", not separate crawlable URLs. The two
+        // policy pages are real routes and are indexable. The PDF download
+        // page is deliberately absent: it is unlisted and noindex.
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "monthly", priority: "1.0" },
+          { path: "/shipping-returns", changefreq: "yearly", priority: "0.3" },
+          { path: "/privacy", changefreq: "yearly", priority: "0.3" },
         ];
 
         const urls = entries.map((e) =>
