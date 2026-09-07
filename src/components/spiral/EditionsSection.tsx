@@ -1,4 +1,5 @@
 import {
+  DIGITAL_EDITION_LINE,
   EDITIONS,
   PRINTED_EDITION_LINE,
   STRIPE_BOOK_PDF_URL,
@@ -94,9 +95,12 @@ export function EditionsSection() {
         </ul>
 
         <Reveal delay={90}>
-          <p className="mt-14 max-w-prose border-t border-metadata/25 pt-6 text-sm leading-relaxed text-metadata">
-            {PRINTED_EDITION_LINE}
-          </p>
+          <div className="mt-14 max-w-prose border-t border-metadata/25 pt-6">
+            <p className="text-sm leading-relaxed text-metadata">{DIGITAL_EDITION_LINE}</p>
+            <p className="mt-3 text-sm leading-relaxed text-metadata">
+              {PRINTED_EDITION_LINE}
+            </p>
+          </div>
         </Reveal>
 
       </div>
