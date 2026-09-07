@@ -1,4 +1,5 @@
 import { ARCHIVE_ENTRIES } from "@/data/archive";
+import { SECTION_INDEX } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { ArchiveFiles } from "./ArchiveFiles";
 import { ArchivePlaceholder } from "./ArchivePlaceholder";
@@ -11,10 +12,16 @@ import { ArchivePlaceholder } from "./ArchivePlaceholder";
  */
 export function ArchiveIndex() {
   return (
-    <section id="archive" className="grain border-t border-metadata/25">
+    <section
+      id="archive"
+      aria-labelledby="archive-index"
+      className="grain border-t border-metadata/25"
+    >
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
-          <p className="label-editorial">Archive</p>
+          <p id="archive-index" className="label-editorial">
+            {SECTION_INDEX.archive}
+          </p>
           <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">Found fragments.</h2>
         </Reveal>
 
@@ -27,6 +34,8 @@ export function ArchiveIndex() {
               <img
                 src={entry.image}
                 alt={entry.title}
+                width={1080}
+                height={1350}
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full object-cover"

@@ -1,16 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NAV_LINKS } from "@/data/content";
 import { cn } from "@/lib/utils";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
 
+  // The bar stays transparent for the whole manifesto and takes its ground
+  // the moment the end of plate 09 passes under it — the only signal that the
+  // register has changed. It keeps that ground for the rest of the scroll.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const manifesto = document.getElementById("manifesto");
+
+    const onScroll = () => {
+      if (!manifesto) {
+        setScrolled(window.scrollY > 24);
+        return;
+      }
+      const barHeight = headerRef.current?.offsetHeight ?? 0;
+      setScrolled(manifesto.getBoundingClientRect().bottom <= barHeight);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -28,6 +46,7 @@ export function SiteNav() {
 
   return (
     <header
+      ref={headerRef}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-700",
         scrolled || open

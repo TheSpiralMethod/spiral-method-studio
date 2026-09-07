@@ -1,13 +1,19 @@
-import { CONTACT_LINKS } from "@/data/content";
+import { CONTACT_LINKS, SECTION_INDEX } from "@/data/content";
 import { Reveal } from "./Reveal";
 
 /** Two plain lines. No form, no service, no persuasion. */
 export function ContactSection() {
   return (
-    <section id="contact" className="grain border-t border-metadata/25">
+    <section
+      id="contact"
+      aria-labelledby="contact-index"
+      className="grain border-t border-metadata/25"
+    >
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
-          <p className="label-editorial">Contact</p>
+          <p id="contact-index" className="label-editorial">
+            {SECTION_INDEX.contact}
+          </p>
         </Reveal>
 
         <Reveal delay={90}>

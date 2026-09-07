@@ -23,6 +23,8 @@ export function LogoMark({
       <img
         src={logo.src}
         alt={logo.alt}
+        width={logo.width}
+        height={logo.height}
         className={cn("h-auto w-full object-contain", className)}
         loading={asset === "full" ? "eager" : "lazy"}
         decoding="async"

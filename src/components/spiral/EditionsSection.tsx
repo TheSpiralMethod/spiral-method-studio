@@ -33,10 +33,16 @@ const EDITION_DISABLED_LABEL: Record<string, string> = {
  */
 export function EditionsSection() {
   return (
-    <section id="editions" className="grain border-t border-metadata/25">
+    <section
+      id="editions"
+      aria-labelledby="editions-index"
+      className="grain border-t border-metadata/25"
+    >
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
-          <p className="label-editorial">Editions</p>
+          <p id="editions-index" className="label-editorial">
+            {SECTION_INDEX.editions}
+          </p>
           <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">The first one exists.</h2>
         </Reveal>
 
