@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as DownloadSegundasAcepcionesX7k2m9RouteImport } from './routes/download.segundas-acepciones-x7k2m9'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,41 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DownloadSegundasAcepcionesX7k2m9Route =
+  DownloadSegundasAcepcionesX7k2m9RouteImport.update({
+    id: '/download/segundas-acepciones-x7k2m9',
+    path: '/download/segundas-acepciones-x7k2m9',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/download/segundas-acepciones-x7k2m9': typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths: '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to: '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
+  id: '__root__' | '/' | '/sitemap.xml' | '/download/segundas-acepciones-x7k2m9'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  DownloadSegundasAcepcionesX7k2m9Route: typeof DownloadSegundasAcepcionesX7k2m9Route
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +76,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/download/segundas-acepciones-x7k2m9': {
+      id: '/download/segundas-acepciones-x7k2m9'
+      path: '/download/segundas-acepciones-x7k2m9'
+      fullPath: '/download/segundas-acepciones-x7k2m9'
+      preLoaderRoute: typeof DownloadSegundasAcepcionesX7k2m9RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  DownloadSegundasAcepcionesX7k2m9Route: DownloadSegundasAcepcionesX7k2m9Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
