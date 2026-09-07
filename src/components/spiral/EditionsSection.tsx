@@ -2,7 +2,7 @@ import {
   EDITIONS,
   EDITIONS_NOTE,
   EDITIONS_FINE_PRINT,
-  STRIPE_BOOK_PREORDER_URL,
+  PRINTED_EDITION_LINE,
   STRIPE_BOOK_PDF_URL,
 } from "@/data/editions";
 import { EDITIONS_DISCLOSURE } from "@/data/content";
@@ -14,27 +14,24 @@ import { BookCover } from "./BookCover";
  * assets. The printed book reads as a physical object (shadow); the PDF is flat.
  */
 const EDITION_COVER_VARIANT: Record<string, "book" | "flat"> = {
-  "01": "book",
   "02": "flat",
 };
 
 /** Each edition's own checkout URL, keyed by id. Empty → disabled text. */
 const EDITION_URL: Record<string, string> = {
-  "01": STRIPE_BOOK_PREORDER_URL,
   "02": STRIPE_BOOK_PDF_URL,
 };
 
 /** Disabled fallback label per edition id. */
 const EDITION_DISABLED_LABEL: Record<string, string> = {
-  "01": "Pre-order — soon",
   "02": "Available soon",
 };
 
 /**
- * Editions: presentation of the book pre-order + optional Stripe Payment
- * Link (hosted checkout, new tab). No cart, no in-app checkout, no inventory.
- * While STRIPE_BOOK_PREORDER_URL is empty, the order control renders as
- * disabled, non-clickable text — never a dead link.
+ * Editions: the digital edition and its Stripe Payment Link (hosted checkout,
+ * new tab). No cart, no in-app checkout, no inventory. While the link is
+ * empty, the order control renders as disabled, non-clickable text — never a
+ * dead link. The printed edition is announced beneath it as one line.
  */
 export function EditionsSection() {
   return (
@@ -42,7 +39,7 @@ export function EditionsSection() {
       <div className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
           <p className="label-editorial">Editions</p>
-          <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">Objects, now.</h2>
+          <h2 className="mt-5 text-3xl leading-tight sm:text-4xl">The first one exists.</h2>
         </Reveal>
 
         <ul className="mt-16 grid grid-cols-1 gap-14 sm:gap-16 md:grid-cols-2 md:gap-x-16 md:gap-y-20 lg:grid-cols-3 lg:gap-x-10">
@@ -75,9 +72,7 @@ export function EditionsSection() {
                         rel="noopener noreferrer"
                         className="link-quiet"
                       >
-                        {edition.status === "PRE-ORDER"
-                          ? `Pre-order — ${edition.price}`
-                          : `Order — ${edition.price}`}
+                        {`Order — ${edition.price}`}
                       </a>
                     ) : (
                       <span
@@ -93,6 +88,12 @@ export function EditionsSection() {
             </Reveal>
           ))}
         </ul>
+
+        <Reveal delay={90}>
+          <p className="mt-14 max-w-prose border-t border-metadata/25 pt-6 text-sm leading-relaxed text-metadata">
+            {PRINTED_EDITION_LINE}
+          </p>
+        </Reveal>
 
         <Reveal delay={90}>
           <div className="mt-16 border-t border-metadata/25 pt-8">
