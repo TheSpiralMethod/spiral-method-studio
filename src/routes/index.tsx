@@ -4,7 +4,6 @@ import { SiteNav } from "@/components/spiral/SiteNav";
 import { Hero } from "@/components/spiral/Hero";
 import { ManifestoSection } from "@/components/spiral/ManifestoSection";
 import { ArchiveIndex } from "@/components/spiral/ArchiveIndex";
-import { ArchiveFiles } from "@/components/spiral/ArchiveFiles";
 import { EditionsSection } from "@/components/spiral/EditionsSection";
 import { AboutSection } from "@/components/spiral/AboutSection";
 import { ContactSection } from "@/components/spiral/ContactSection";
@@ -63,7 +62,6 @@ function Index() {
         <Hero />
         <ManifestoSection />
         <ArchiveIndex />
-        <ArchiveFiles />
         {SHOW_EDITIONS ? <EditionsSection /> : null}
         <AboutSection />
         <ContactSection />
