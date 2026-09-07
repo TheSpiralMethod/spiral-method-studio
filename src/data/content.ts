@@ -134,9 +134,10 @@ export const EDITIONS_DISCLOSURE: EditionsDisclosureSection[] = [
   {
     label: "PRIVACY",
     lines: [
-      "This site runs no analytics and no third-party scripts.",
-      "Payment and shipping details are handled by Stripe and are never stored on this site.",
-      "The only cookies are those set by the host to serve the page.",
+      "No analytics. No tracking.",
+      "Typefaces load from Google Fonts, which sees your IP address.",
+      "Payment is handled by Stripe, on Stripe's pages. Card details never reach this site.",
+      "The only cookies are those the host sets to serve the page.",
     ],
   },
 ];
