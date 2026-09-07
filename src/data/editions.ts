@@ -45,7 +45,7 @@ export const EDITIONS: Edition[] = [
   {
     id: "01",
     title: "Segundas acepciones",
-    format: "Book · 140 × 216 mm · 69 pages · 66 entries",
+    format: "Book · 140 × 216 mm · 88 pages · 66 entries",
     description:
       "Sixty-six words, defined twice. The first definition is the dictionary's. The second is not.",
     price: "MXN $220",
@@ -56,7 +56,7 @@ export const EDITIONS: Edition[] = [
   {
     id: "02",
     title: "Segundas acepciones — PDF",
-    format: "Digital · 69 pages · 66 entries",
+    format: "Digital · 88 pages · 66 entries",
     description: "The complete book as a PDF. Available worldwide, no shipping.",
     price: "MXN $90",
     status: "AVAILABLE",
