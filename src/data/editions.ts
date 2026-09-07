@@ -46,9 +46,6 @@ export const EDITIONS: Edition[] = [
   },
 ];
 
-/** Sits directly under the digital edition, in the same quiet register. */
-export const DIGITAL_EDITION_LINE = "Live today at 23:59.";
-
 /**
  * The printed edition, announced only. Not a product: no price, no control,
  * no date. Shipping and returns for it live at /shipping-returns.
