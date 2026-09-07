@@ -23,7 +23,7 @@ export const STRIPE_BOOK_PREORDER_URL = "https://buy.stripe.com/cNieV6bTz4UBbLZ6
  * Paste the hosted-checkout URL here before enabling the section.
  * The Editions section MUST NOT be published while this is empty.
  */
-export const STRIPE_BOOK_PDF_URL = "";
+export const STRIPE_BOOK_PDF_URL = "https://buy.stripe.com/8x29AUcieapUfNfh1g6c001";
 
 export type Edition = {
   id: string;
@@ -58,7 +58,7 @@ export const EDITIONS: Edition[] = [
     title: "Segundas acepciones — PDF",
     format: "Digital · 88 pages · 66 entries",
     description: "The complete book as a PDF. Available worldwide, no shipping.",
-    price: "MXN $90",
+    price: "MXN $139",
     status: "AVAILABLE",
     availability: "Delivered by email after purchase.",
     image: "",
