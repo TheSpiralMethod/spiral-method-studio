@@ -26,9 +26,8 @@ export type Edition = {
   status: string;
   availability: string;
   /**
-   * Covers are rendered as SVG via BookCover — no image files needed.
-   * These fields stay empty until real photographs of the printed object
-   * replace the vector covers.
+   * Unused. The cover is the book's own artwork, served as a static file
+   * from /covers and referenced directly by EditionsSection.
    */
   image: string;
 };

@@ -5,15 +5,6 @@ import {
 } from "@/data/editions";
 import { SECTION_INDEX } from "@/data/content";
 import { Reveal } from "./Reveal";
-import { BookCover } from "./BookCover";
-
-/**
- * Cover artwork per edition id, rendered as vector via BookCover — no image
- * assets. The printed book reads as a physical object (shadow); the PDF is flat.
- */
-const EDITION_COVER_VARIANT: Record<string, "book" | "flat"> = {
-  "02": "flat",
-};
 
 /** Each edition's own checkout URL, keyed by id. Empty → disabled text. */
 const EDITION_URL: Record<string, string> = {
@@ -50,9 +41,13 @@ export function EditionsSection() {
           {EDITIONS.map((edition, i) => (
             <Reveal as="li" key={edition.id} delay={(i % 3) * 90}>
               <article>
-                <BookCover
-                  variant={EDITION_COVER_VARIANT[edition.id] ?? "flat"}
-                  title={`${edition.title} — cover`}
+                <img
+                  src="/covers/segundas-acepciones.webp"
+                  width="1200"
+                  height="1855"
+                  className="aspect-[396/612] w-full object-cover"
+                  alt="Cover of Segundas acepciones: the title set in ink on paper above Found Fragment 21, a fan of sixty-six trajectories rising from a single amber point."
+                  loading="lazy"
                 />
 
                 <div className="mt-5 border-t border-metadata/25 pt-4">
