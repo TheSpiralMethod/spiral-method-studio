@@ -1,16 +1,26 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /segundas-acepciones.pdf
+Disallow: /download/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /segundas-acepciones.pdf
+Disallow: /download/
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /segundas-acepciones.pdf
+Disallow: /download/
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /segundas-acepciones.pdf
+Disallow: /download/
 
 User-agent: *
 Allow: /
+Disallow: /segundas-acepciones.pdf
+Disallow: /download/
 
 Sitemap: https://thespiralmethod.life/sitemap.xml
