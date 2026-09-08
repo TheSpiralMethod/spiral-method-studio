@@ -9,7 +9,7 @@ export const Route = createFileRoute("/shipping-returns")({
       { title: "Shipping & Returns — The Spiral Method" },
       {
         name: "description",
-        content: "How the printed edition ships, and how returns work.",
+        content: "How the PDF edition is delivered, and how returns work.",
       },
     ],
     links: [

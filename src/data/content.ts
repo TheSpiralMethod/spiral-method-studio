@@ -119,6 +119,12 @@ export const COPYRIGHT = "© 2026 The Spiral Method";
  * and not as terms.
  */
 export const SHIPPING_RETURNS_LINES = [
+  { heading: "The PDF edition." },
+  "Delivered as a download the moment payment clears. Nothing ships.",
+  "If the download fails or you lose the link, write to ivan@thespiralmethod.life and it will be sent again.",
+  "Because the file is delivered immediately, a completed download is not refundable. If you paid and never received the file, the payment is refunded in full.",
+  { heading: "The printed edition." },
+  "Not currently for sale.",
   "The printed book ships within Mexico only. Shipping is included in the price.",
   "Printed to order. Shipped within four weeks of order.",
   "Returns accepted within 30 days, unread and in original condition. Return shipping is paid by the buyer, unless the book arrived damaged or incorrect.",
