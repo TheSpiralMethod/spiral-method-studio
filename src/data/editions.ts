@@ -40,7 +40,8 @@ export const EDITIONS: Edition[] = [
     description: "The complete book as a PDF. Available worldwide, no shipping.",
     price: "MXN $139",
     status: "AVAILABLE",
-    availability: "Delivered by email after purchase.",
+    availability:
+      "The download opens straight after payment. If you lose the page, write to ivan@thespiralmethod.life and it will be sent again.",
     image: "",
   },
 ];
