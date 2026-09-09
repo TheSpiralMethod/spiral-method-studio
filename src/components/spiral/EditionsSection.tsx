@@ -93,7 +93,7 @@ export function EditionsSection() {
                     loading="lazy"
                   />
                 </div>
-                <EditionText edition={EDITIONS[0]} />
+                <EditionText edition={EDITIONS[0]!} />
               </div>
             </div>
           </Reveal>
