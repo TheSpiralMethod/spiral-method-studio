@@ -4,13 +4,22 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+
+// Google Analytics 4 — measurement ID G-LQLVT93KJP (not an env var; see head() scripts).
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
 
 function NotFoundComponent() {
   return (
@@ -99,6 +108,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
+    scripts: [
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-LQLVT93KJP",
+      },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-LQLVT93KJP');",
+      },
+    ],
   }),
 
   shellComponent: RootShell,
@@ -121,6 +140,26 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// Fires a GA4 page_view on every client-side route change. TanStack Router's
+// head scripts load once on first paint and do not re-run on SPA navigation,
+// so without this the initial page_view (from gtag('config')) would be the
+// only one ever recorded.
+function GoogleAnalyticsRouteViews() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isFirst = useRef(true);
+  useEffect(() => {
+    if (isFirst.current) {
+      // The initial load is already counted by gtag('config') in the head script.
+      isFirst.current = false;
+      return;
+    }
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", { page_path: pathname });
+    }
+  }, [pathname]);
+  return null;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -128,6 +167,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <GoogleAnalyticsRouteViews />
     </QueryClientProvider>
   );
 }
