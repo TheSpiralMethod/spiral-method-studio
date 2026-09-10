@@ -140,6 +140,26 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// Fires a GA4 page_view on every client-side route change. TanStack Router's
+// head scripts load once on first paint and do not re-run on SPA navigation,
+// so without this the initial page_view (from gtag('config')) would be the
+// only one ever recorded.
+function GoogleAnalyticsRouteViews() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isFirst = useRef(true);
+  useEffect(() => {
+    if (isFirst.current) {
+      // The initial load is already counted by gtag('config') in the head script.
+      isFirst.current = false;
+      return;
+    }
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", { page_path: pathname });
+    }
+  }, [pathname]);
+  return null;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -147,6 +167,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <GoogleAnalyticsRouteViews />
     </QueryClientProvider>
   );
 }
